@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="LgStars">
 <meta property="og:description" content="1 关于地址和指针 真考链接  指针用于存放其他数据的地址   当指针指向变量时，利用指针可以指向该变量   当指针指向数组时，利用指针可以访问数组元素   当指针指向数组函数时，此时指针变量中存放的是函数的入口地址，可以通过指针调用该函数   当指针指向结构时，可以用指针引用结构变量的成员  1.1 地址：相当于每个变量的房间号。 1.2 内存大小： （1）int 2个字节  （2）char 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-18T10:18:56.282Z">
+<meta property="og:updated_time" content="2018-03-19T01:33:53.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指针">
 <meta name="twitter:description" content="1 关于地址和指针 真考链接  指针用于存放其他数据的地址   当指针指向变量时，利用指针可以指向该变量   当指针指向数组时，利用指针可以访问数组元素   当指针指向数组函数时，此时指针变量中存放的是函数的入口地址，可以通过指针调用该函数   当指针指向结构时，可以用指针引用结构变量的成员  1.1 地址：相当于每个变量的房间号。 1.2 内存大小： （1）int 2个字节  （2）char 1">
@@ -455,6 +455,53 @@
     p = 300;(不合法的赋值)
 
 （3）给一个指针赋空值：q = NULL 或 q = &apos;\0&apos; 或 q = 0；
+</code></pre><p>2.3 指针变量作为函数参数</p>
+<blockquote>
+<p>如果想要通过函数调用从而得到n个想要改变的值，可以采用以下方法：</p>
+</blockquote>
+<pre><code>（1）在主函数里面设n个变量，分别用n个指针变量指向它们。
+
+（2）然后将各个指针变量作为实参，即将n个变量的地址传递给所调用函数的形参。
+
+（3）通过形参指针变量的改变，从而改变这n个变量的值。
+
+（4）主函数就可以使用这些改变了的值的变量。
+
+注意：形参指针变量的值不能使实参指针变量的值发生改变。
+</code></pre><h3 id="3-数组和指针"><a href="#3-数组和指针" class="headerlink" title="3 数组和指针"></a>3 数组和指针</h3><blockquote>
+<p>所谓的数组的指针是指数组的起始地址，数组元素的指针是各个数组元素的地址。</p>
+</blockquote>
+<p>3.1 移动指针</p>
+<pre><code>（1）移动指针是指当指针变量指向一串连续的存储单元时，对指针变量进行加减运算，或者通过赋值运算，是指针变量指向相邻的存储单元。
+</code></pre><p>3.2 指向数组元素的指针和通过指针引用数组的元素</p>
+<pre><code>（1）指向数组元素的指针：
+
+    int c[10] = {0};
+    int *p;
+    p = c;
+
+    则语句p = c;与语句p = &amp;c[0];是等价的。
+
+（2）通过指针引用数组元素：
+
+    如果指针变量p已经指向数组中的一个元素，则p+1指向同数组中的下一个元素（而不是将p的值简单加1），这里的加1是指增加一个长度单位（与数组基类型所占存储单元相同）。
+</code></pre><p>3.3 用函数名作为函数参数</p>
+<blockquote>
+<p>数组名可以用作函数的形参和实参。</p>
+</blockquote>
+<pre><code>(1)当数组名作为参数被传递时，如果行参数组各元素发生了变化，则原实参数各元素的值也发生变化。
+
+解析1：当数组名作为实参时，在调用函数时是把数组的首地址传递给形参，因此实参数组和形参数组共占一段内存单元。
+
+解析2：如果用数组元素作为实参的情况就与变量作为实参一样，是“值传递方式”，单向传递。
+
+（2）比较：
+
+实参类型        要求形参的类型            传递的信息        通过函数调用参数改变实参的值
+
+变量名            变量名                    变量的值        不可以
+
+数组名            数组名或指针变量        数组的起始地址        可以
 </code></pre>
       
     </div>
@@ -640,7 +687,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-关于地址和指针"><span class="nav-number">1.</span> <span class="nav-text">1 关于地址和指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#真考链接"><span class="nav-number">1.1.</span> <span class="nav-text">真考链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-变量的指针和指向变量的指针变量"><span class="nav-number">2.</span> <span class="nav-text">2 变量的指针和指向变量的指针变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-关于地址和指针"><span class="nav-number">1.</span> <span class="nav-text">1 关于地址和指针</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#真考链接"><span class="nav-number">1.1.</span> <span class="nav-text">真考链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-变量的指针和指向变量的指针变量"><span class="nav-number">2.</span> <span class="nav-text">2 变量的指针和指向变量的指针变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组和指针"><span class="nav-number">3.</span> <span class="nav-text">3 数组和指针</span></a></li></ol></div>
             
 
           </div>
