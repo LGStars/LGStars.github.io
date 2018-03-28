@@ -412,7 +412,7 @@
       
         
           
-            <h2 id="ListView分析"><a href="#ListView分析" class="headerlink" title="ListView分析"></a>ListView分析</h2><blockquote>
+            <h4 id="博客录语—每一日你所付出的代价都比前一日高，因为你的生命又消短了一天，所以每一日你都要更用心。"><a href="#博客录语—每一日你所付出的代价都比前一日高，因为你的生命又消短了一天，所以每一日你都要更用心。" class="headerlink" title="博客录语—每一日你所付出的代价都比前一日高，因为你的生命又消短了一天，所以每一日你都要更用心。"></a>博客录语—每一日你所付出的代价都比前一日高，因为你的生命又消短了一天，所以每一日你都要更用心。</h4><h2 id="ListView分析"><a href="#ListView分析" class="headerlink" title="ListView分析"></a>ListView分析</h2><blockquote>
 <p>listview的设计理念，采用适配器设计模式，让数据和界面分离，更利于扩展和维护。</p>
 </blockquote>
 <h3 id="listview的组成"><a href="#listview的组成" class="headerlink" title="listview的组成"></a>listview的组成</h3><p>1、listview控件。</p>
@@ -425,7 +425,9 @@
 
         （3）BaseAdapter
 </code></pre><p>3、数据源。</p>
-<h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><pre><code>`String[] datas = {&quot;第一&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,
+<h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><pre><code>（1）代码
+
+`String[] datas = {&quot;第一&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,
         &quot;第二&quot;,&quot;第二&quot;,&quot;第四&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第二&quot;,&quot;第三&quot;,
         &quot;第二&quot;,&quot;第二&quot;,&quot;第五&quot;,};`
 
@@ -435,7 +437,14 @@
 
     listview.setAdapter(adapter);`
 
+（2）效果图
+
 ![](https://i.imgur.com/9ssFaZi.png)
+</code></pre><h2 id="定制ListView效果图"><a href="#定制ListView效果图" class="headerlink" title="定制ListView效果图"></a>定制ListView效果图</h2><blockquote>
+<p>多功能展示UI。</p>
+</blockquote>
+<p>1、数据准备</p>
+<pre><code>（1）字符串类型已经不能满足我们的要求了，需要定义一个实体类，作为listview的适配器的适配类型（也就是数据）。
 </code></pre>
           
         
