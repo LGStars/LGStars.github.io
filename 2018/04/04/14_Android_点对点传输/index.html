@@ -1,0 +1,1559 @@
+﻿<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  ﻿<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta name="theme-color" content="#222">
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="博客录语  —  如果要挖井，就要挖到水出为止。Android无网络传输原理 Wifi P2P是在Android 4.0以及更高版本系统中加入的功能，通过WifiP2P可以在不连接网络的情况下，直接与配对的设备进行数据交换。相对于蓝牙，Wifi P2P的搜索速度和传输速度更快，传输距离更远.   效果图（1）：效果图（2）：  1、步骤说明1.1 一般而言，开发步骤分为以下几点：      （1）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点对点传输，Android无网络传输">
+<meta property="og:url" content="http://yoursite.com/2018/04/04/14_Android_点对点传输/index.html">
+<meta property="og:site_name" content="LgStars">
+<meta property="og:description" content="博客录语  —  如果要挖井，就要挖到水出为止。Android无网络传输原理 Wifi P2P是在Android 4.0以及更高版本系统中加入的功能，通过WifiP2P可以在不连接网络的情况下，直接与配对的设备进行数据交换。相对于蓝牙，Wifi P2P的搜索速度和传输速度更快，传输距离更远.   效果图（1）：效果图（2）：  1、步骤说明1.1 一般而言，开发步骤分为以下几点：      （1）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/0F2USyX.jpg">
+<meta property="og:image" content="https://i.imgur.com/26C533K.jpg">
+<meta property="og:updated_time" content="2018-04-04T06:59:09.239Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="点对点传输，Android无网络传输">
+<meta name="twitter:description" content="博客录语  —  如果要挖井，就要挖到水出为止。Android无网络传输原理 Wifi P2P是在Android 4.0以及更高版本系统中加入的功能，通过WifiP2P可以在不连接网络的情况下，直接与配对的设备进行数据交换。相对于蓝牙，Wifi P2P的搜索速度和传输速度更快，传输距离更远.   效果图（1）：效果图（2）：  1、步骤说明1.1 一般而言，开发步骤分为以下几点：      （1）">
+<meta name="twitter:image" content="https://i.imgur.com/0F2USyX.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'JunBoXu'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/04/14_Android_点对点传输/"/>
+
+
+
+
+
+  <title>点对点传输，Android无网络传输 | LgStars</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1e0b9fbc3415438997c409b6b7c26a65";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+		
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LgStars</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">恰同学少年，风华正茂。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/14_Android_点对点传输/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JunBoXu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LgStars">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">点对点传输，Android无网络传输</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T14:25:00+08:00">
+                2018-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/04/14_Android_点对点传输/" class="leancloud_visitors" data-flag-title="点对点传输，Android无网络传输">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="博客录语-—-如果要挖井，就要挖到水出为止。"><a href="#博客录语-—-如果要挖井，就要挖到水出为止。" class="headerlink" title="博客录语  —  如果要挖井，就要挖到水出为止。"></a>博客录语  —  如果要挖井，就要挖到水出为止。</h6><h2 id="Android无网络传输原理"><a href="#Android无网络传输原理" class="headerlink" title="Android无网络传输原理"></a>Android无网络传输原理</h2><blockquote>
+<p>Wifi P2P是在Android 4.0以及更高版本系统中加入的功能，通过Wifi<br>P2P可以在不连接网络的情况下，直接与配对的设备进行数据交换。相对<br>于蓝牙，Wifi P2P的搜索速度和传输速度更快，传输距离更远.</p>
+</blockquote>
+<blockquote>
+<p>效果图（1）：<img src="https://i.imgur.com/0F2USyX.jpg" alt=""><br>效果图（2）：<img src="https://i.imgur.com/26C533K.jpg" alt=""></p>
+</blockquote>
+<h3 id="1、步骤说明"><a href="#1、步骤说明" class="headerlink" title="1、步骤说明"></a>1、步骤说明</h3><pre><code>1.1 一般而言，开发步骤分为以下几点：
+
+    （1）在AndroidManifest中声明相关权限（网络和文件读写权限）。
+
+    （2）获取WifiP2pManager，注册相关广播监听Wifi直连的状态变化。
+
+    （3）指定某一台设备为服务器（用来接收文件），创建群组并作为群主存在，在指定端口监听客户端的连接请求，等待客户端发起连接请求以及文件传输请求。
+
+    （4）客户端（用来发送文件）主动搜索附近的设备，加入到服务器创建的群组，获取服务器的IP地址，向其发起文件传输请求。
+
+    （5）校验文件完整性。
+</code></pre><h3 id="2、声明权限"><a href="#2、声明权限" class="headerlink" title="2、声明权限"></a>2、声明权限</h3><blockquote>
+<p>Wifi P2P技术并不访问网络，但由于会使用到Java套接字，所以需要申<br>请网络权限。此外，由于是要实现文件互传，所以也需要申请SD卡读写权<br>限。</p>
+</blockquote>
+<pre><code>(1) &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;
+
+（2）&lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_STATE&quot; /&gt;
+
+（3）&lt;uses-permission android:name=&quot;android.permission.CHANGE_NETWORK_STATE&quot; /&gt;
+
+（4）&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+
+（5）&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+
+（6）&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+
+（7）&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+</code></pre><h3 id="3、注册广播"><a href="#3、注册广播" class="headerlink" title="3、注册广播"></a>3、注册广播</h3><pre><code>3.1 与Wifi P2P相关的广播有以下几个：
+
+    （1）WIFI_P2P_STATE_CHANGED_ACTION（用于指示Wifi P2P是否可用）
+
+    （2）WIFI_P2P_PEERS_CHANGED_ACTION（对等节点列表发生了变化）
+
+    （3）WIFI_P2P_CONNECTION_CHANGED_ACTION（Wifi P2P的连接状态发生了改变）
+
+    （4）WIFI_P2P_THIS_DEVICE_CHANGED_ACTION（本设备的设备信息发生了变化）
+
+3.2 当接收到这几个广播时，我们都需要到WifiP2pManager（对等网络管理器）来进行相应的信息请求，此外还需要用到Channel对象作为请求参数
+
+    `mWifiP2pManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
+    mChannel = mWifiP2pManager.initialize(this, getMainLooper(), this);`
+
+3.3 当收到WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION广播时，可以判断当前Wifi P2P是否可用
+
+    `int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+    if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+        mDirectActionListener.wifiP2pEnabled(true);
+    } else {
+        mDirectActionListener.wifiP2pEnabled(false);                
+    }`
+
+3.4 当收到WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION广播时，意味设备周围的可用设备列表发生了变化，可以通过requestPeers方法得到可用的设备列表，之后就可以选择当中的某一个设备进行连接操作
+
+    `mWifiP2pManager.requestPeers(mChannel, new WifiP2pManager.PeerListListener() {
+        @Override
+        public void onPeersAvailable(WifiP2pDeviceList peers) {
+            mDirectActionListener.onPeersAvailable(peers.getDeviceList());
+        }
+    });`
+
+3.5 当收到WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION广播时，意味着Wifi P2P的连接状态发生了变化，可能是连接到了某设备，或者是与某设备断开了连接
+
+    `NetworkInfo networkInfo = intent.getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
+    if (networkInfo.isConnected()) {
+        mWifiP2pManager.requestConnectionInfo(mChannel, new WifiP2pManager.ConnectionInfoListener() {
+            @Override
+            public void onConnectionInfoAvailable(WifiP2pInfo info) {
+                mDirectActionListener.onConnectionInfoAvai          lable(info);
+            }
+        });
+        Log.e(TAG, &quot;已连接p2p设备&quot;);
+    } else {
+        mDirectActionListener.onDisconnection();
+        Log.e(TAG, &quot;与p2p设备已断开连接&quot;);
+    }`
+
+3.6 如果是与某设备连接上了，则可以通requestConnectionInfo方法获取到连接信息。当收WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION广播时，则可以获取到本设备变化后的设备信息
+
+    `(WifiP2pDevice) intent.getParcelableExtra(WifiP2pManager.EXTRA_WIFI_P2P_DEVICE)`
+
+3.7 可以看出Wifi P2P的接口高度异步化，到现在已经用到了三个系统的回调函数，一个用于WifiP2pManager的初始化，两个用于在广播中异步请求数据，为了简化操作，此处统一使用一个自定义的回调函数，方法含义与系统的回调函数一致
+
+    `public interface DirectActionListener extends WifiP2pManager.ChannelListener {
+
+    void wifiP2pEnabled(boolean enabled);
+
+    void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo);
+
+    void onDisconnection();
+
+    void onSelfDeviceAvailable(WifiP2pDevice wifiP2pDevice);
+
+    void onPeersAvailable(Collection&lt;WifiP2pDevice&gt; wifiP2pDeviceList);
+
+    }`
+
+所以，整个广播接收器使用到的所有代码是：
+
+    `public class DirectBroadcastReceiver extends BroadcastReceiver {
+
+    private static final String TAG = &quot;DirectBroadcastReceiver&quot;;
+
+    private WifiP2pManager mWifiP2pManager;
+
+    private WifiP2pManager.Channel mChannel;
+
+    private DirectActionListener mDirectActionListener;
+
+    public DirectBroadcastReceiver(WifiP2pManager wifiP2pManager, WifiP2pManager.Channel channel, DirectActionListener directActionListener) {
+        mWifiP2pManager = wifiP2pManager;
+        mChannel = channel;
+        mDirectActionListener = directActionListener;
+    }
+
+    public static IntentFilter getIntentFilter() {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
+        return intentFilter;
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.e(TAG, &quot;接收到广播： &quot; + intent.getAction());
+        if (!TextUtils.isEmpty(intent.getAction())) {
+            switch (intent.getAction()) {
+                // 用于指示 Wifi P2P 是否可用
+                case WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION: {
+                    int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+                    if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+                        mDirectActionListener.wifiP2pEnabled(true);
+                    } else {
+                        mDirectActionListener.wifiP2pEnabled(false);
+                        List&lt;WifiP2pDevice&gt; wifiP2pDeviceList = new ArrayList&lt;&gt;();
+                        mDirectActionListener.onPeersAvailable(wifiP2pDeviceList);
+                    }
+                    break;
+                }
+                // 对等节点列表发生了变化
+                case WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION: {
+                    mWifiP2pManager.requestPeers(mChannel, new WifiP2pManager.PeerListListener() {
+                        @Override
+                        public void onPeersAvailable(WifiP2pDeviceList peers) {
+                            mDirectActionListener.onPeersAvailable(peers.getDeviceList());
+                        }
+                    });
+                    break;
+                }
+                // Wifi P2P 的连接状态发生了改变
+                case WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION: {
+                    NetworkInfo networkInfo = intent.getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
+                    if (networkInfo.isConnected()) {
+                        mWifiP2pManager.requestConnectionInfo(mChannel, new WifiP2pManager.ConnectionInfoListener() {
+                            @Override
+                            public void onConnectionInfoAvailable(WifiP2pInfo info) {
+                                mDirectActionListener.onConnectionInfoAvailable(info);
+                            }
+                        });
+                        Log.e(TAG, &quot;已连接p2p设备&quot;);
+                    } else {
+                        mDirectActionListener.onDisconnection();
+                        Log.e(TAG, &quot;与p2p设备已断开连接&quot;);
+                    }
+                    break;
+                }
+                //本设备的设备信息发生了变化
+                case WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION: {
+                    mDirectActionListener.onSelfDeviceAvailable((WifiP2pDevice) intent.getParcelableExtra(WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
+                    break;
+                }
+            }
+        }
+    }
+
+}`
+</code></pre><h3 id="4、服务器端创建群组"><a href="#4、服务器端创建群组" class="headerlink" title="4、服务器端创建群组"></a>4、服务器端创建群组</h3><pre><code>4.1 假设当设备甲搜索到了设备B，并与设备乙连接到了一起，此时系统会自动创建一个群组（集团）并随机指定一台设备为群主（GroupOwner）。此时，对于两台设备来说，群主的IP地址是可知的（系统回调函数中有提供），但客户端的IP地址需要再来通过其他方法来主动获取。例如，可以在设备连接成功后，客户端主动发起对服务器端的插座连接请求，服务器端在指定端口监听客户端的连接请求，当连接成功后，服务器端就可以获取到客户端的IP地址了。此处为了简化操作，直接指定某台设备作为服务器端（群主），即直接指定某台设备用来接收文件。因此，服务器端要主动创建群组，并等待客户端的连接。
+
+`wifiP2pManager.createGroup(channel, new WifiP2pManager.ActionListener() {
+    @Override
+    public void onSuccess() {
+        Log.e(TAG, &quot;createGroup onSuccess&quot;);
+        dismissLoadingDialog();
+        showToast(&quot;onSuccess&quot;);
+    }
+
+     @Override
+     public void onFailure(int reason) {
+        Log.e(TAG, &quot;createGroup onFailure: &quot; + reason);
+        dismissLoadingDialog();
+        showToast(&quot;onFailure&quot;);
+    }
+});`
+
+4.2 此处，使用IntentService在后台监听客户端的Socket连接请求，并通过输入输出流来传输文件。此处的代码比较简单，就是在指定端口一直堵塞监听客户端的连接请求，获取待传输的文件信息模型FileTransfer，之后就进行实际的数据传输
+
+    `@Override
+    protected void onHandleIntent(Intent intent) {
+        clean();
+        File file = null;
+        try {
+            serverSocket = new ServerSocket();
+            serverSocket.setReuseAddress(true);
+            serverSocket.bind(new InetSocketAddress(PORT));
+            Socket client = serverSocket.accept();
+            Log.e(TAG, &quot;客户端IP地址 : &quot; + client.getInetAddress().getHostAddress());
+            inputStream = client.getInputStream();
+            objectInputStream = new ObjectInputStream(inputStream);
+            FileTransfer fileTransfer = (FileTransfer) objectInputStream.readObject();
+            Log.e(TAG, &quot;待接收的文件: &quot; + fileTransfer);
+            String name = new File(fileTransfer.getFilePath()).getName();
+            //将文件存储至指定位置
+            file = new File(Environment.getExternalStorageDirectory() + &quot;/&quot; + name);
+            fileOutputStream = new FileOutputStream(file);
+            byte buf[] = new byte[512];
+            int len;
+            long total = 0;
+            int progress;
+            while ((len = inputStream.read(buf)) != -1) {
+                fileOutputStream.write(buf, 0, len);
+                total += len;
+                progress = (int) ((total * 100) / fileTransfer.getFileLength());
+                Log.e(TAG, &quot;文件接收进度: &quot; + progress);
+                if (progressChangListener != null) {
+                    progressChangListener.onProgressChanged(fileTransfer, progress);
+                }
+            }
+            serverSocket.close();
+            inputStream.close();
+            objectInputStream.close();
+            fileOutputStream.close();
+            serverSocket = null;
+            inputStream = null;
+            objectInputStream = null;
+            fileOutputStream = null;
+            Log.e(TAG, &quot;文件接收成功，文件的MD5码是：&quot; + Md5Util.getMd5(file));
+        } catch (Exception e) {
+            Log.e(TAG, &quot;文件接收 Exception: &quot; + e.getMessage());
+        } finally {
+            clean();
+            if (progressChangListener != null) {
+                progressChangListener.onTransferFinished(file);
+            }
+            //再次启动服务，等待客户端下次连接
+            startService(new Intent(this, WifiServerService.class));
+        }
+    }`
+
+4.3 因为客户端可能会多次发起连接请求，所以当此处理文件传输完成后（不管成功或失败），都需要重新startService，让服务再次堵塞等待客户端的连接请求。
+
+FileTransfer包含三个字段，MD5码值用于校验文件的完整性，fileLength是为了用于计算文件的传输进度。
+
+    `public class FileTransfer implements Serializable {
+
+    //文件路径
+    private String filePath;
+
+    //文件大小
+    private long fileLength;
+
+    //MD5码
+    private String md5;
+
+    ···
+
+}`
+
+4.4 为了将文件传输进度发布到外部界面，所以除了需要启动服务外，界面还需要绑定服务，此处就需要用到一个更新文件传输状态的接口。
+
+    `public interface OnProgressChangListener {
+
+        //当传输进度发生变化时
+        void onProgressChanged(FileTransfer fileTransfer, int progress);
+
+        //当传输结束时
+        void onTransferFinished(File file);
+
+    }`
+
+4.5 因此，需要将progressChangListener作为参数传给WifiServerService，并在进度变化时更新进度对话框。
+
+    `private WifiServerService.OnProgressChangListener progressChangListener = new WifiServerService.OnProgressChangListener() {
+        @Override
+        public void onProgressChanged(final FileTransfer fileTransfer, final int progress) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.setMessage(&quot;文件名： &quot; + new File(fileTransfer.getFilePath()).getName());
+                    progressDialog.setProgress(progress);
+                    progressDialog.show();
+                }
+            });
+        }
+
+        @Override
+        public void onTransferFinished(final File file) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.cancel();
+                    if (file != null &amp;&amp; file.exists()) {
+                        openFile(file.getPath());
+                    }
+                }
+            });
+        }
+    };`
+</code></pre><h3 id="5、客户端加入群组并发起文件传输请求"><a href="#5、客户端加入群组并发起文件传输请求" class="headerlink" title="5、客户端加入群组并发起文件传输请求"></a>5、客户端加入群组并发起文件传输请求</h3><pre><code>5.1 文件发送界面SendFileActivity需要实现DirectActionListener接口首先，需要先注册P2P广播，以便获取周边设备信息以及连接状态
+
+    `@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_send_file);
+        initView();
+        mWifiP2pManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
+        mChannel = mWifiP2pManager.initialize(this, getMainLooper(), this);
+        broadcastReceiver = new DirectBroadcastReceiver(mWifiP2pManager, mChannel, this);
+        registerReceiver(broadcastReceiver, DirectBroadcastReceiver.getIntentFilter());
+    }`
+
+5.2 通过discoverPeers方法搜索周边设备，回调函数用于通知方法是否调用成功。
+
+    `mWifiP2pManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
+    @Override
+    public void onSuccess() {
+        showToast(&quot;Success&quot;);
+    }
+
+    @Override
+    public void onFailure(int reasonCode) {
+        showToast(&quot;Failure&quot;);
+        loadingDialog.cancel();
+     }
+});`
+
+5.3 当搜索结束后，系统就会触发WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION广播，此时就可以调用requestPeers方法获取设备列表信息，此处用RecyclerView展示列表，在onPeersAvailable方法刷新列表。
+
+    `mWifiP2pManager.requestPeers(mChannel, new WifiP2pManager.PeerListListener() {
+    @Override
+    public void onPeersAvailable(WifiP2pDeviceList peers) {
+        mDirectActionListener.onPeersAvailable(peers.getDeviceList());
+    }
+});
+@Override
+    public void onPeersAvailable(Collection&lt;WifiP2pDevice&gt; wifiP2pDeviceList) {
+        Log.e(TAG, &quot;onPeersAvailable :&quot; + wifiP2pDeviceList.size());
+        this.wifiP2pDeviceList.clear();
+        this.wifiP2pDeviceList.addAll(wifiP2pDeviceList);
+        deviceAdapter.notifyDataSetChanged();
+        loadingDialog.cancel();
+    }`
+
+5.4 之后，通过点击事件选中群主（服务器端）设备，通过连接方法请求与之进行连接
+
+    `private void connect() {
+    WifiP2pConfig config = new WifiP2pConfig();
+    if (config.deviceAddress != null &amp;&amp; mWifiP2pDevice != null) {
+        config.deviceAddress = mWifiP2pDevice.deviceAddress;
+        config.wps.setup = WpsInfo.PBC;
+        showLoadingDialog(&quot;正在连接 &quot; + mWifiP2pDevice.deviceName);
+        mWifiP2pManager.connect(mChannel, config, new WifiP2pManager.ActionListener() {
+            @Override
+            public void onSuccess() {
+                Log.e(TAG, &quot;connect onSuccess&quot;);
+            }
+
+            @Override
+            public void onFailure(int reason) {
+                showToast(&quot;连接失败 &quot; + reason);
+                dismissLoadingDialog();
+            }
+        });
+    }
+}`
+
+5.5 此处依然无法通过函数函数来判断连接结果，需要依靠系统发出的WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION   方法来获取到连接结果，在此处可以通过requestConnectionInfo获取到组连接信息，信息最后通过onConnectionInfoAvailable方法传递出来，在此可以判断当前设备是否为群主，获取群组IP地址。
+
+    `@Override
+public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
+    dismissLoadingDialog();
+    wifiP2pDeviceList.clear();
+    deviceAdapter.notifyDataSetChanged();
+    btn_disconnect.setEnabled(true);
+    btn_chooseFile.setEnabled(true);
+    Log.e(TAG, &quot;onConnectionInfoAvailable&quot;);
+    Log.e(TAG, &quot;onConnectionInfoAvailable groupFormed: &quot; + wifiP2pInfo.groupFormed);
+    Log.e(TAG, &quot;onConnectionInfoAvailable isGroupOwner: &quot; + wifiP2pInfo.isGroupOwner);
+    Log.e(TAG, &quot;onConnectionInfoAvailable getHostAddress: &quot; + wifiP2pInfo.groupOwnerAddress.getHostAddress());
+    StringBuilder stringBuilder = new StringBuilder();
+    if (mWifiP2pDevice != null) {
+        stringBuilder.append(&quot;连接的设备名：&quot;);
+        stringBuilder.append(mWifiP2pDevice.deviceName);
+        stringBuilder.append(&quot;\n&quot;);
+        stringBuilder.append(&quot;连接的设备的地址：&quot;);
+        stringBuilder.append(mWifiP2pDevice.deviceAddress);
+    }
+    stringBuilder.append(&quot;\n&quot;);
+    stringBuilder.append(&quot;是否群主：&quot;);
+    stringBuilder.append(wifiP2pInfo.isGroupOwner ? &quot;是群主&quot; : &quot;非群主&quot;);
+    stringBuilder.append(&quot;\n&quot;);
+    stringBuilder.append(&quot;群主IP地址：&quot;);
+    stringBuilder.append(wifiP2pInfo.groupOwnerAddress.getHostAddress());
+    tv_status.setText(stringBuilder);
+    if (wifiP2pInfo.groupFormed &amp;&amp; !wifiP2pInfo.isGroupOwner) {
+        this.wifiP2pInfo = wifiP2pInfo;
+    }
+}`
+
+5.6 至此服务器端和客户端已经通过Wifi P2P连接在了一起，客户端也获取到了服务器端的IP地址，在选取好待发送的文件后就可以主动发起对服务器端的连接请求了。
+
+5.7 发起选取文件的方法
+
+    `Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+    intent.setType(&quot;*/*&quot;);
+    intent.addCategory(Intent.CATEGORY_OPENABLE);
+    startActivityForResult(intent, 1);`
+
+5.8 获取选取的文件的实际路径
+
+    `@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Uri uri = data.getData();
+                if (uri != null) {
+                    String path = getPath(this, uri);
+                    if (path != null) {
+                        File file = new File(path);
+                        if (file.exists() &amp;&amp; wifiP2pInfo != null) {
+                            FileTransfer fileTransfer = new FileTransfer(file.getPath(), file.length());
+                            Log.e(TAG, &quot;待发送的文件：&quot; + fileTransfer);
+                            new WifiClientTask(this, fileTransfer).execute(wifiP2pInfo.groupOwnerAddress.getHostAddress());
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private String getPath(Context context, Uri uri) {
+        if (&quot;content&quot;.equalsIgnoreCase(uri.getScheme())) {
+            Cursor cursor = context.getContentResolver().query(uri, new String[]{&quot;_data&quot;}, null, null, null);
+            if (cursor != null) {
+               if (cursor.moveToFirst()) {
+                    String data = cursor.getString(cursor.getColumnIndex(&quot;_data&quot;));
+                    cursor.close();
+                    return data;
+                }
+            }
+        } else if (&quot;file&quot;.equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+        return null;
+    }`
+
+5.9 文件的发送操作放到AsyncTask中处理，将服务器端的IP地址作为参数传进来，在正式发送文件前，先发送包含文件信息（文件名，文件大小，文件MD5码）的信息模型FileTransfer，并在发送文件的过程中同时更新进度
+
+    `public class WifiClientTask extends AsyncTask&lt;String, Integer, Boolean&gt; {
+
+        private ProgressDialog progressDialog;
+
+        private FileTransfer fileTransfer;
+
+        private static final int PORT = 4786;
+
+        private static final String TAG = &quot;WifiClientTask&quot;;
+
+        public WifiClientTask(Context context, FileTransfer fileTransfer) {
+            this.fileTransfer = fileTransfer;
+            progressDialog = new ProgressDialog(context);
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressDialog.setCancelable(false);
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.setTitle(&quot;正在发送文件&quot;);
+            progressDialog.setMax(100);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            fileTransfer.setMd5(Md5Util.getMd5(new File(fileTransfer.getFilePath())));
+            Log.e(TAG, &quot;文件的MD5码值是：&quot; + fileTransfer.getMd5());
+            Socket socket = null;
+            OutputStream outputStream = null;
+            ObjectOutputStream objectOutputStream = null;
+            InputStream inputStream = null;
+            try {
+                socket = new Socket();
+                socket.bind(null);
+                socket.connect((new InetSocketAddress(strings[0], PORT)), 10000);
+                outputStream = socket.getOutputStream();
+                objectOutputStream = new ObjectOutputStream(outputStream);
+                objectOutputStream.writeObject(fileTransfer);
+                inputStream = new FileInputStream(new File(fileTransfer.getFilePath()));
+                long fileSize = fileTransfer.getFileLength();
+                long total = 0;
+                byte buf[] = new byte[512];
+                int len;
+                while ((len = inputStream.read(buf)) != -1) {
+                    outputStream.write(buf, 0, len);
+                    total += len;
+                    int progress = (int) ((total * 100) / fileSize);
+                    publishProgress(progress);
+                    Log.e(TAG, &quot;文件发送进度：&quot; + progress);
+                }
+                outputStream.close();
+                objectOutputStream.close();
+                inputStream.close();
+                socket.close();
+                outputStream = null;
+                objectOutputStream = null;
+                inputStream = null;
+                socket = null;
+                Log.e(TAG, &quot;文件发送成功&quot;);
+                return true;
+            } catch (Exception e) {
+                Log.e(TAG, &quot;文件发送异常 Exception: &quot; + e.getMessage());
+            } finally {
+                if (outputStream != null) {
+                    try {
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (objectOutputStream != null) {
+                    try {
+                        objectOutputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (socket != null) {
+                    try {
+                        socket.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return false;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            progressDialog.setProgress(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            progressDialog.cancel();
+            Log.e(TAG, &quot;onPostExecute: &quot; + aBoolean);
+        }
+
+    }`
+</code></pre><h3 id="6、校验文件完整性"><a href="#6、校验文件完整性" class="headerlink" title="6、校验文件完整性"></a>6、校验文件完整性</h3><pre><code>6.1 传输文件的完整性主要是通过计算文件的MD5码值来保证了，在发送文件前，即在WifiClientTask的doInBackground方法中进行计算，将MD5码值赋给给FileTransfer模型，通过如下方法计算得到
+
+    `public class Md5Util {
+
+    public static String getMd5(File file) {
+        InputStream inputStream = null;
+        byte[] buffer = new byte[2048];
+        int numRead;
+        MessageDigest md5;
+        try {
+            inputStream = new FileInputStream(file);
+            md5 = MessageDigest.getInstance(&quot;MD5&quot;);
+            while ((numRead = inputStream.read(buffer)) &gt; 0) {
+                md5.update(buffer, 0, numRead);
+            }
+            inputStream.close();
+            inputStream = null;
+            return md5ToString(md5.digest());
+        } catch (Exception e) {
+            return null;
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private static String md5ToString(byte[] md5Bytes) {
+        StringBuilder hexValue = new StringBuilder();
+        for (byte b : md5Bytes) {
+            int val = ((int) b) &amp; 0xff;
+            if (val &lt; 16) {
+                hexValue.append(&quot;0&quot;);
+            }
+            hexValue.append(Integer.toHexString(val));
+        }
+        return hexValue.toString();
+    }
+
+}`
+</code></pre>
+      
+    </div>
+    
+    
+    
+	
+	<div>
+		
+			﻿<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/30/13_Matlab_Simulink/" rel="next" title="Simulink电路仿真">
+                <i class="fa fa-chevron-left"></i> Simulink电路仿真
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/05/15_Protues_光电耦合/" rel="prev" title="实现线性传输的非线性光电耦合电路的设计与仿真">
+                实现线性传输的非线性光电耦合电路的设计与仿真 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.png"
+                alt="JunBoXu" />
+            
+              <p class="site-author-name" itemprop="name">JunBoXu</p>
+              <p class="site-description motion-element" itemprop="description">时间就像海绵里的水，只要愿挤，总还是有的。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LGStars" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:3398334198@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#博客录语-—-如果要挖井，就要挖到水出为止。"><span class="nav-number">1.</span> <span class="nav-text">博客录语  —  如果要挖井，就要挖到水出为止。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android无网络传输原理"><span class="nav-number"></span> <span class="nav-text">Android无网络传输原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、步骤说明"><span class="nav-number"></span> <span class="nav-text">1、步骤说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、声明权限"><span class="nav-number"></span> <span class="nav-text">2、声明权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、注册广播"><span class="nav-number"></span> <span class="nav-text">3、注册广播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、服务器端创建群组"><span class="nav-number"></span> <span class="nav-text">4、服务器端创建群组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、客户端加入群组并发起文件传输请求"><span class="nav-number"></span> <span class="nav-text">5、客户端加入群组并发起文件传输请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、校验文件完整性"><span class="nav-number"></span> <span class="nav-text">6、校验文件完整性</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JunBoXu</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  -->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("SkmdmHS8m1n0yBfk0jX7cWzC-gzGzoHsz", "LgApVDF1nFNibYvaiOFMllmk");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+</body>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</html>

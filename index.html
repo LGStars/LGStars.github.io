@@ -276,6 +276,1025 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/15_Protues_光电耦合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JunBoXu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LgStars">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/05/15_Protues_光电耦合/" itemprop="url">实现线性传输的非线性光电耦合电路的设计与仿真</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T19:49:00+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Protues/" itemprop="url" rel="index">
+                    <span itemprop="name">Protues</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/05/15_Protues_光电耦合/" class="leancloud_visitors" data-flag-title="实现线性传输的非线性光电耦合电路的设计与仿真">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h6 id="博客录语-—-拥有梦想只是一种智力，实现梦想才是一种潜力。"><a href="#博客录语-—-拥有梦想只是一种智力，实现梦想才是一种潜力。" class="headerlink" title="博客录语  —  拥有梦想只是一种智力，实现梦想才是一种潜力。"></a>博客录语  —  拥有梦想只是一种智力，实现梦想才是一种潜力。</h6><h2 id="实现线性传输的非线性光电耦合电路的设计与仿真"><a href="#实现线性传输的非线性光电耦合电路的设计与仿真" class="headerlink" title="实现线性传输的非线性光电耦合电路的设计与仿真"></a>实现线性传输的非线性光电耦合电路的设计与仿真</h2><h3 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h3><pre><code>1.1 光电耦合器件把发光器件和光敏器件组装在一起，以光为媒介，实现输入和输出之间的电气隔离。光电耦合是一种简单有效的隔离技术，关键技术在于破坏了“地”干扰的传播途径，切断了干扰信号进入后续电路的途径，有效地抑制了尖脉冲和各种噪声干扰。电流传输比是光电耦合器件性能的一个重要标志，定义为输出电流与输入电流的比值。
+
+1.2 虽然光电耦合器具有非常好的隔离性能，但是由于非线性使其不能在模拟信号的隔离上大量使用。线性光耦的出现有效地解决了这个问题。但用其搭成电路后，电路线性输出范围较窄（在0～3 V左右），并且价格较高，在某种程度上影响了它的适用范围。
+
+1.3 本文利用双路光耦设计了非线性光耦的隔离电路，在实现线性传输完成信号采集的同时，增宽了电路的线性输出范围。
+</code></pre><h3 id="2、电路设计"><a href="#2、电路设计" class="headerlink" title="2、电路设计"></a>2、电路设计</h3><h4 id="2-1-设计原理"><a href="#2-1-设计原理" class="headerlink" title="2.1 设计原理"></a>2.1 设计原理</h4><pre><code>2.1.1 线性光耦内部大多采用光敏二极管进行光耦合，因此，线性光耦(如SLC800等)大多都有两种工作模式。光敏三极管虽然是光伏效应器件，但在零偏时，光敏三极管并无信号电流输出。因此，利用光敏三极管进行光耦合的光耦器件仅具有光电导型工作模式。
+
+2.1.2 光敏三极管是一种相当于将基极、集电极光敏二极管的电流加以放大的普通晶体管放大器。其工作过程可分为光电转换和光电流放大两个环节，如右图（1）。当基极受光时，入射光子在基区及收集区被吸收而产生电子-空穴对，生成光生电压，由此产生的光生电流进入发射极，从而在集电极回路中得到了一个放大了β倍的信号电流，如右图（2）。
+
+![](https://i.imgur.com/ldlOhaG.png)
+
+2.1.3 由此可知，在同样光照、同样偏压条件下，光敏三极管的输出电流是光敏二极管的β倍，所以光敏三极管构成的光耦电流传输比是光敏二极管的β倍，电路中与光耦串联的同一阻值电阻的分压也是β倍。由此可通过利用光敏三极管进行光耦合的光耦器件设计一种线性输出范围较宽的线性光耦隔离电路。
+</code></pre><h4 id="2-2-电路组成"><a href="#2-2-电路组成" class="headerlink" title="2.2 电路组成"></a>2.2 电路组成</h4><pre><code>2.2.1 设计电路由光电耦合部分、输入部分和输出部分组成，如图所示。
+双路光耦采用PC817，由两个发光二极管和两个光敏三极管构成。将两发光二极管串联使其通过相同的电流，进而使两光敏三极管受光相同。一光敏三极管构成伺服反馈回路，经运算放大器反馈到输入端，称为伺服光电管；另一光敏三极管构成输出回路，典型用法是后接运算放大器，称为传输光电管。伺服反馈有利于发光二极管输出线性化，主要是利用运算放大器的功能特性，微调发光二极管的传输电流作保证。
+
+2.2.2 电容C的选用是必要的，在电路的工作过程中它主要起反馈作用，若不加电容在输出端会出现三角波，使运放两输入端的电压不能保持一致，影响电路的精度。为增大电路的输入阻抗并减小输出阻抗，在电路的输出端将运放A2作为放大器使用，以提高电路的带负载能力。
+
+![](https://i.imgur.com/adeIiES.png) 
+</code></pre><h3 id="3、附录"><a href="#3、附录" class="headerlink" title="3、附录"></a>3、附录</h3><pre><code>3.1 仿真图
+
+![](https://i.imgur.com/Mht62Ez.png)
+
+3.2 效果图
+
+![](https://i.imgur.com/aBavLRH.png)
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+		
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/14_Android_点对点传输/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JunBoXu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LgStars">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/04/14_Android_点对点传输/" itemprop="url">点对点传输，Android无网络传输</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T14:25:00+08:00">
+                2018-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/04/14_Android_点对点传输/" class="leancloud_visitors" data-flag-title="点对点传输，Android无网络传输">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h6 id="博客录语-—-如果要挖井，就要挖到水出为止。"><a href="#博客录语-—-如果要挖井，就要挖到水出为止。" class="headerlink" title="博客录语  —  如果要挖井，就要挖到水出为止。"></a>博客录语  —  如果要挖井，就要挖到水出为止。</h6><h2 id="Android无网络传输原理"><a href="#Android无网络传输原理" class="headerlink" title="Android无网络传输原理"></a>Android无网络传输原理</h2><blockquote>
+<p>Wifi P2P是在Android 4.0以及更高版本系统中加入的功能，通过Wifi<br>P2P可以在不连接网络的情况下，直接与配对的设备进行数据交换。相对<br>于蓝牙，Wifi P2P的搜索速度和传输速度更快，传输距离更远.</p>
+</blockquote>
+<blockquote>
+<p>效果图（1）：<img src="https://i.imgur.com/0F2USyX.jpg" alt=""><br>效果图（2）：<img src="https://i.imgur.com/26C533K.jpg" alt=""></p>
+</blockquote>
+<h3 id="1、步骤说明"><a href="#1、步骤说明" class="headerlink" title="1、步骤说明"></a>1、步骤说明</h3><pre><code>1.1 一般而言，开发步骤分为以下几点：
+
+    （1）在AndroidManifest中声明相关权限（网络和文件读写权限）。
+
+    （2）获取WifiP2pManager，注册相关广播监听Wifi直连的状态变化。
+
+    （3）指定某一台设备为服务器（用来接收文件），创建群组并作为群主存在，在指定端口监听客户端的连接请求，等待客户端发起连接请求以及文件传输请求。
+
+    （4）客户端（用来发送文件）主动搜索附近的设备，加入到服务器创建的群组，获取服务器的IP地址，向其发起文件传输请求。
+
+    （5）校验文件完整性。
+</code></pre><h3 id="2、声明权限"><a href="#2、声明权限" class="headerlink" title="2、声明权限"></a>2、声明权限</h3><blockquote>
+<p>Wifi P2P技术并不访问网络，但由于会使用到Java套接字，所以需要申<br>请网络权限。此外，由于是要实现文件互传，所以也需要申请SD卡读写权<br>限。</p>
+</blockquote>
+<pre><code>(1) &lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;
+
+（2）&lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_STATE&quot; /&gt;
+
+（3）&lt;uses-permission android:name=&quot;android.permission.CHANGE_NETWORK_STATE&quot; /&gt;
+
+（4）&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+
+（5）&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+
+（6）&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+
+（7）&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+</code></pre><h3 id="3、注册广播"><a href="#3、注册广播" class="headerlink" title="3、注册广播"></a>3、注册广播</h3><pre><code>3.1 与Wifi P2P相关的广播有以下几个：
+
+    （1）WIFI_P2P_STATE_CHANGED_ACTION（用于指示Wifi P2P是否可用）
+
+    （2）WIFI_P2P_PEERS_CHANGED_ACTION（对等节点列表发生了变化）
+
+    （3）WIFI_P2P_CONNECTION_CHANGED_ACTION（Wifi P2P的连接状态发生了改变）
+
+    （4）WIFI_P2P_THIS_DEVICE_CHANGED_ACTION（本设备的设备信息发生了变化）
+
+3.2 当接收到这几个广播时，我们都需要到WifiP2pManager（对等网络管理器）来进行相应的信息请求，此外还需要用到Channel对象作为请求参数
+
+    `mWifiP2pManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
+    mChannel = mWifiP2pManager.initialize(this, getMainLooper(), this);`
+
+3.3 当收到WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION广播时，可以判断当前Wifi P2P是否可用
+
+    `int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+    if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+        mDirectActionListener.wifiP2pEnabled(true);
+    } else {
+        mDirectActionListener.wifiP2pEnabled(false);                
+    }`
+
+3.4 当收到WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION广播时，意味设备周围的可用设备列表发生了变化，可以通过requestPeers方法得到可用的设备列表，之后就可以选择当中的某一个设备进行连接操作
+
+    `mWifiP2pManager.requestPeers(mChannel, new WifiP2pManager.PeerListListener() {
+        @Override
+        public void onPeersAvailable(WifiP2pDeviceList peers) {
+            mDirectActionListener.onPeersAvailable(peers.getDeviceList());
+        }
+    });`
+
+3.5 当收到WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION广播时，意味着Wifi P2P的连接状态发生了变化，可能是连接到了某设备，或者是与某设备断开了连接
+
+    `NetworkInfo networkInfo = intent.getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
+    if (networkInfo.isConnected()) {
+        mWifiP2pManager.requestConnectionInfo(mChannel, new WifiP2pManager.ConnectionInfoListener() {
+            @Override
+            public void onConnectionInfoAvailable(WifiP2pInfo info) {
+                mDirectActionListener.onConnectionInfoAvai          lable(info);
+            }
+        });
+        Log.e(TAG, &quot;已连接p2p设备&quot;);
+    } else {
+        mDirectActionListener.onDisconnection();
+        Log.e(TAG, &quot;与p2p设备已断开连接&quot;);
+    }`
+
+3.6 如果是与某设备连接上了，则可以通requestConnectionInfo方法获取到连接信息。当收WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION广播时，则可以获取到本设备变化后的设备信息
+
+    `(WifiP2pDevice) intent.getParcelableExtra(WifiP2pManager.EXTRA_WIFI_P2P_DEVICE)`
+
+3.7 可以看出Wifi P2P的接口高度异步化，到现在已经用到了三个系统的回调函数，一个用于WifiP2pManager的初始化，两个用于在广播中异步请求数据，为了简化操作，此处统一使用一个自定义的回调函数，方法含义与系统的回调函数一致
+
+    `public interface DirectActionListener extends WifiP2pManager.ChannelListener {
+
+    void wifiP2pEnabled(boolean enabled);
+
+    void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo);
+
+    void onDisconnection();
+
+    void onSelfDeviceAvailable(WifiP2pDevice wifiP2pDevice);
+
+    void onPeersAvailable(Collection&lt;WifiP2pDevice&gt; wifiP2pDeviceList);
+
+    }`
+
+所以，整个广播接收器使用到的所有代码是：
+
+    `public class DirectBroadcastReceiver extends BroadcastReceiver {
+
+    private static final String TAG = &quot;DirectBroadcastReceiver&quot;;
+
+    private WifiP2pManager mWifiP2pManager;
+
+    private WifiP2pManager.Channel mChannel;
+
+    private DirectActionListener mDirectActionListener;
+
+    public DirectBroadcastReceiver(WifiP2pManager wifiP2pManager, WifiP2pManager.Channel channel, DirectActionListener directActionListener) {
+        mWifiP2pManager = wifiP2pManager;
+        mChannel = channel;
+        mDirectActionListener = directActionListener;
+    }
+
+    public static IntentFilter getIntentFilter() {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
+        intentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
+        return intentFilter;
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.e(TAG, &quot;接收到广播： &quot; + intent.getAction());
+        if (!TextUtils.isEmpty(intent.getAction())) {
+            switch (intent.getAction()) {
+                // 用于指示 Wifi P2P 是否可用
+                case WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION: {
+                    int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+                    if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+                        mDirectActionListener.wifiP2pEnabled(true);
+                    } else {
+                        mDirectActionListener.wifiP2pEnabled(false);
+                        List&lt;WifiP2pDevice&gt; wifiP2pDeviceList = new ArrayList&lt;&gt;();
+                        mDirectActionListener.onPeersAvailable(wifiP2pDeviceList);
+                    }
+                    break;
+                }
+                // 对等节点列表发生了变化
+                case WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION: {
+                    mWifiP2pManager.requestPeers(mChannel, new WifiP2pManager.PeerListListener() {
+                        @Override
+                        public void onPeersAvailable(WifiP2pDeviceList peers) {
+                            mDirectActionListener.onPeersAvailable(peers.getDeviceList());
+                        }
+                    });
+                    break;
+                }
+                // Wifi P2P 的连接状态发生了改变
+                case WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION: {
+                    NetworkInfo networkInfo = intent.getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
+                    if (networkInfo.isConnected()) {
+                        mWifiP2pManager.requestConnectionInfo(mChannel, new WifiP2pManager.ConnectionInfoListener() {
+                            @Override
+                            public void onConnectionInfoAvailable(WifiP2pInfo info) {
+                                mDirectActionListener.onConnectionInfoAvailable(info);
+                            }
+                        });
+                        Log.e(TAG, &quot;已连接p2p设备&quot;);
+                    } else {
+                        mDirectActionListener.onDisconnection();
+                        Log.e(TAG, &quot;与p2p设备已断开连接&quot;);
+                    }
+                    break;
+                }
+                //本设备的设备信息发生了变化
+                case WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION: {
+                    mDirectActionListener.onSelfDeviceAvailable((WifiP2pDevice) intent.getParcelableExtra(WifiP2pManager.EXTRA_WIFI_P2P_DEVICE));
+                    break;
+                }
+            }
+        }
+    }
+
+}`
+</code></pre><h3 id="4、服务器端创建群组"><a href="#4、服务器端创建群组" class="headerlink" title="4、服务器端创建群组"></a>4、服务器端创建群组</h3><pre><code>4.1 假设当设备甲搜索到了设备B，并与设备乙连接到了一起，此时系统会自动创建一个群组（集团）并随机指定一台设备为群主（GroupOwner）。此时，对于两台设备来说，群主的IP地址是可知的（系统回调函数中有提供），但客户端的IP地址需要再来通过其他方法来主动获取。例如，可以在设备连接成功后，客户端主动发起对服务器端的插座连接请求，服务器端在指定端口监听客户端的连接请求，当连接成功后，服务器端就可以获取到客户端的IP地址了。此处为了简化操作，直接指定某台设备作为服务器端（群主），即直接指定某台设备用来接收文件。因此，服务器端要主动创建群组，并等待客户端的连接。
+
+`wifiP2pManager.createGroup(channel, new WifiP2pManager.ActionListener() {
+    @Override
+    public void onSuccess() {
+        Log.e(TAG, &quot;createGroup onSuccess&quot;);
+        dismissLoadingDialog();
+        showToast(&quot;onSuccess&quot;);
+    }
+
+     @Override
+     public void onFailure(int reason) {
+        Log.e(TAG, &quot;createGroup onFailure: &quot; + reason);
+        dismissLoadingDialog();
+        showToast(&quot;onFailure&quot;);
+    }
+});`
+
+4.2 此处，使用IntentService在后台监听客户端的Socket连接请求，并通过输入输出流来传输文件。此处的代码比较简单，就是在指定端口一直堵塞监听客户端的连接请求，获取待传输的文件信息模型FileTransfer，之后就进行实际的数据传输
+
+    `@Override
+    protected void onHandleIntent(Intent intent) {
+        clean();
+        File file = null;
+        try {
+            serverSocket = new ServerSocket();
+            serverSocket.setReuseAddress(true);
+            serverSocket.bind(new InetSocketAddress(PORT));
+            Socket client = serverSocket.accept();
+            Log.e(TAG, &quot;客户端IP地址 : &quot; + client.getInetAddress().getHostAddress());
+            inputStream = client.getInputStream();
+            objectInputStream = new ObjectInputStream(inputStream);
+            FileTransfer fileTransfer = (FileTransfer) objectInputStream.readObject();
+            Log.e(TAG, &quot;待接收的文件: &quot; + fileTransfer);
+            String name = new File(fileTransfer.getFilePath()).getName();
+            //将文件存储至指定位置
+            file = new File(Environment.getExternalStorageDirectory() + &quot;/&quot; + name);
+            fileOutputStream = new FileOutputStream(file);
+            byte buf[] = new byte[512];
+            int len;
+            long total = 0;
+            int progress;
+            while ((len = inputStream.read(buf)) != -1) {
+                fileOutputStream.write(buf, 0, len);
+                total += len;
+                progress = (int) ((total * 100) / fileTransfer.getFileLength());
+                Log.e(TAG, &quot;文件接收进度: &quot; + progress);
+                if (progressChangListener != null) {
+                    progressChangListener.onProgressChanged(fileTransfer, progress);
+                }
+            }
+            serverSocket.close();
+            inputStream.close();
+            objectInputStream.close();
+            fileOutputStream.close();
+            serverSocket = null;
+            inputStream = null;
+            objectInputStream = null;
+            fileOutputStream = null;
+            Log.e(TAG, &quot;文件接收成功，文件的MD5码是：&quot; + Md5Util.getMd5(file));
+        } catch (Exception e) {
+            Log.e(TAG, &quot;文件接收 Exception: &quot; + e.getMessage());
+        } finally {
+            clean();
+            if (progressChangListener != null) {
+                progressChangListener.onTransferFinished(file);
+            }
+            //再次启动服务，等待客户端下次连接
+            startService(new Intent(this, WifiServerService.class));
+        }
+    }`
+
+4.3 因为客户端可能会多次发起连接请求，所以当此处理文件传输完成后（不管成功或失败），都需要重新startService，让服务再次堵塞等待客户端的连接请求。
+
+FileTransfer包含三个字段，MD5码值用于校验文件的完整性，fileLength是为了用于计算文件的传输进度。
+
+    `public class FileTransfer implements Serializable {
+
+    //文件路径
+    private String filePath;
+
+    //文件大小
+    private long fileLength;
+
+    //MD5码
+    private String md5;
+
+    ···
+
+}`
+
+4.4 为了将文件传输进度发布到外部界面，所以除了需要启动服务外，界面还需要绑定服务，此处就需要用到一个更新文件传输状态的接口。
+
+    `public interface OnProgressChangListener {
+
+        //当传输进度发生变化时
+        void onProgressChanged(FileTransfer fileTransfer, int progress);
+
+        //当传输结束时
+        void onTransferFinished(File file);
+
+    }`
+
+4.5 因此，需要将progressChangListener作为参数传给WifiServerService，并在进度变化时更新进度对话框。
+
+    `private WifiServerService.OnProgressChangListener progressChangListener = new WifiServerService.OnProgressChangListener() {
+        @Override
+        public void onProgressChanged(final FileTransfer fileTransfer, final int progress) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.setMessage(&quot;文件名： &quot; + new File(fileTransfer.getFilePath()).getName());
+                    progressDialog.setProgress(progress);
+                    progressDialog.show();
+                }
+            });
+        }
+
+        @Override
+        public void onTransferFinished(final File file) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.cancel();
+                    if (file != null &amp;&amp; file.exists()) {
+                        openFile(file.getPath());
+                    }
+                }
+            });
+        }
+    };`
+</code></pre><h3 id="5、客户端加入群组并发起文件传输请求"><a href="#5、客户端加入群组并发起文件传输请求" class="headerlink" title="5、客户端加入群组并发起文件传输请求"></a>5、客户端加入群组并发起文件传输请求</h3><pre><code>5.1 文件发送界面SendFileActivity需要实现DirectActionListener接口首先，需要先注册P2P广播，以便获取周边设备信息以及连接状态
+
+    `@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_send_file);
+        initView();
+        mWifiP2pManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
+        mChannel = mWifiP2pManager.initialize(this, getMainLooper(), this);
+        broadcastReceiver = new DirectBroadcastReceiver(mWifiP2pManager, mChannel, this);
+        registerReceiver(broadcastReceiver, DirectBroadcastReceiver.getIntentFilter());
+    }`
+
+5.2 通过discoverPeers方法搜索周边设备，回调函数用于通知方法是否调用成功。
+
+    `mWifiP2pManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
+    @Override
+    public void onSuccess() {
+        showToast(&quot;Success&quot;);
+    }
+
+    @Override
+    public void onFailure(int reasonCode) {
+        showToast(&quot;Failure&quot;);
+        loadingDialog.cancel();
+     }
+});`
+
+5.3 当搜索结束后，系统就会触发WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION广播，此时就可以调用requestPeers方法获取设备列表信息，此处用RecyclerView展示列表，在onPeersAvailable方法刷新列表。
+
+    `mWifiP2pManager.requestPeers(mChannel, new WifiP2pManager.PeerListListener() {
+    @Override
+    public void onPeersAvailable(WifiP2pDeviceList peers) {
+        mDirectActionListener.onPeersAvailable(peers.getDeviceList());
+    }
+});
+@Override
+    public void onPeersAvailable(Collection&lt;WifiP2pDevice&gt; wifiP2pDeviceList) {
+        Log.e(TAG, &quot;onPeersAvailable :&quot; + wifiP2pDeviceList.size());
+        this.wifiP2pDeviceList.clear();
+        this.wifiP2pDeviceList.addAll(wifiP2pDeviceList);
+        deviceAdapter.notifyDataSetChanged();
+        loadingDialog.cancel();
+    }`
+
+5.4 之后，通过点击事件选中群主（服务器端）设备，通过连接方法请求与之进行连接
+
+    `private void connect() {
+    WifiP2pConfig config = new WifiP2pConfig();
+    if (config.deviceAddress != null &amp;&amp; mWifiP2pDevice != null) {
+        config.deviceAddress = mWifiP2pDevice.deviceAddress;
+        config.wps.setup = WpsInfo.PBC;
+        showLoadingDialog(&quot;正在连接 &quot; + mWifiP2pDevice.deviceName);
+        mWifiP2pManager.connect(mChannel, config, new WifiP2pManager.ActionListener() {
+            @Override
+            public void onSuccess() {
+                Log.e(TAG, &quot;connect onSuccess&quot;);
+            }
+
+            @Override
+            public void onFailure(int reason) {
+                showToast(&quot;连接失败 &quot; + reason);
+                dismissLoadingDialog();
+            }
+        });
+    }
+}`
+
+5.5 此处依然无法通过函数函数来判断连接结果，需要依靠系统发出的WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION   方法来获取到连接结果，在此处可以通过requestConnectionInfo获取到组连接信息，信息最后通过onConnectionInfoAvailable方法传递出来，在此可以判断当前设备是否为群主，获取群组IP地址。
+
+    `@Override
+public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
+    dismissLoadingDialog();
+    wifiP2pDeviceList.clear();
+    deviceAdapter.notifyDataSetChanged();
+    btn_disconnect.setEnabled(true);
+    btn_chooseFile.setEnabled(true);
+    Log.e(TAG, &quot;onConnectionInfoAvailable&quot;);
+    Log.e(TAG, &quot;onConnectionInfoAvailable groupFormed: &quot; + wifiP2pInfo.groupFormed);
+    Log.e(TAG, &quot;onConnectionInfoAvailable isGroupOwner: &quot; + wifiP2pInfo.isGroupOwner);
+    Log.e(TAG, &quot;onConnectionInfoAvailable getHostAddress: &quot; + wifiP2pInfo.groupOwnerAddress.getHostAddress());
+    StringBuilder stringBuilder = new StringBuilder();
+    if (mWifiP2pDevice != null) {
+        stringBuilder.append(&quot;连接的设备名：&quot;);
+        stringBuilder.append(mWifiP2pDevice.deviceName);
+        stringBuilder.append(&quot;\n&quot;);
+        stringBuilder.append(&quot;连接的设备的地址：&quot;);
+        stringBuilder.append(mWifiP2pDevice.deviceAddress);
+    }
+    stringBuilder.append(&quot;\n&quot;);
+    stringBuilder.append(&quot;是否群主：&quot;);
+    stringBuilder.append(wifiP2pInfo.isGroupOwner ? &quot;是群主&quot; : &quot;非群主&quot;);
+    stringBuilder.append(&quot;\n&quot;);
+    stringBuilder.append(&quot;群主IP地址：&quot;);
+    stringBuilder.append(wifiP2pInfo.groupOwnerAddress.getHostAddress());
+    tv_status.setText(stringBuilder);
+    if (wifiP2pInfo.groupFormed &amp;&amp; !wifiP2pInfo.isGroupOwner) {
+        this.wifiP2pInfo = wifiP2pInfo;
+    }
+}`
+
+5.6 至此服务器端和客户端已经通过Wifi P2P连接在了一起，客户端也获取到了服务器端的IP地址，在选取好待发送的文件后就可以主动发起对服务器端的连接请求了。
+
+5.7 发起选取文件的方法
+
+    `Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+    intent.setType(&quot;*/*&quot;);
+    intent.addCategory(Intent.CATEGORY_OPENABLE);
+    startActivityForResult(intent, 1);`
+
+5.8 获取选取的文件的实际路径
+
+    `@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Uri uri = data.getData();
+                if (uri != null) {
+                    String path = getPath(this, uri);
+                    if (path != null) {
+                        File file = new File(path);
+                        if (file.exists() &amp;&amp; wifiP2pInfo != null) {
+                            FileTransfer fileTransfer = new FileTransfer(file.getPath(), file.length());
+                            Log.e(TAG, &quot;待发送的文件：&quot; + fileTransfer);
+                            new WifiClientTask(this, fileTransfer).execute(wifiP2pInfo.groupOwnerAddress.getHostAddress());
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private String getPath(Context context, Uri uri) {
+        if (&quot;content&quot;.equalsIgnoreCase(uri.getScheme())) {
+            Cursor cursor = context.getContentResolver().query(uri, new String[]{&quot;_data&quot;}, null, null, null);
+            if (cursor != null) {
+               if (cursor.moveToFirst()) {
+                    String data = cursor.getString(cursor.getColumnIndex(&quot;_data&quot;));
+                    cursor.close();
+                    return data;
+                }
+            }
+        } else if (&quot;file&quot;.equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+        return null;
+    }`
+
+5.9 文件的发送操作放到AsyncTask中处理，将服务器端的IP地址作为参数传进来，在正式发送文件前，先发送包含文件信息（文件名，文件大小，文件MD5码）的信息模型FileTransfer，并在发送文件的过程中同时更新进度
+
+    `public class WifiClientTask extends AsyncTask&lt;String, Integer, Boolean&gt; {
+
+        private ProgressDialog progressDialog;
+
+        private FileTransfer fileTransfer;
+
+        private static final int PORT = 4786;
+
+        private static final String TAG = &quot;WifiClientTask&quot;;
+
+        public WifiClientTask(Context context, FileTransfer fileTransfer) {
+            this.fileTransfer = fileTransfer;
+            progressDialog = new ProgressDialog(context);
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressDialog.setCancelable(false);
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.setTitle(&quot;正在发送文件&quot;);
+            progressDialog.setMax(100);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            fileTransfer.setMd5(Md5Util.getMd5(new File(fileTransfer.getFilePath())));
+            Log.e(TAG, &quot;文件的MD5码值是：&quot; + fileTransfer.getMd5());
+            Socket socket = null;
+            OutputStream outputStream = null;
+            ObjectOutputStream objectOutputStream = null;
+            InputStream inputStream = null;
+            try {
+                socket = new Socket();
+                socket.bind(null);
+                socket.connect((new InetSocketAddress(strings[0], PORT)), 10000);
+                outputStream = socket.getOutputStream();
+                objectOutputStream = new ObjectOutputStream(outputStream);
+                objectOutputStream.writeObject(fileTransfer);
+                inputStream = new FileInputStream(new File(fileTransfer.getFilePath()));
+                long fileSize = fileTransfer.getFileLength();
+                long total = 0;
+                byte buf[] = new byte[512];
+                int len;
+                while ((len = inputStream.read(buf)) != -1) {
+                    outputStream.write(buf, 0, len);
+                    total += len;
+                    int progress = (int) ((total * 100) / fileSize);
+                    publishProgress(progress);
+                    Log.e(TAG, &quot;文件发送进度：&quot; + progress);
+                }
+                outputStream.close();
+                objectOutputStream.close();
+                inputStream.close();
+                socket.close();
+                outputStream = null;
+                objectOutputStream = null;
+                inputStream = null;
+                socket = null;
+                Log.e(TAG, &quot;文件发送成功&quot;);
+                return true;
+            } catch (Exception e) {
+                Log.e(TAG, &quot;文件发送异常 Exception: &quot; + e.getMessage());
+            } finally {
+                if (outputStream != null) {
+                    try {
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (objectOutputStream != null) {
+                    try {
+                        objectOutputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (socket != null) {
+                    try {
+                        socket.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return false;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            progressDialog.setProgress(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            progressDialog.cancel();
+            Log.e(TAG, &quot;onPostExecute: &quot; + aBoolean);
+        }
+
+    }`
+</code></pre><h3 id="6、校验文件完整性"><a href="#6、校验文件完整性" class="headerlink" title="6、校验文件完整性"></a>6、校验文件完整性</h3><pre><code>6.1 传输文件的完整性主要是通过计算文件的MD5码值来保证了，在发送文件前，即在WifiClientTask的doInBackground方法中进行计算，将MD5码值赋给给FileTransfer模型，通过如下方法计算得到
+
+    `public class Md5Util {
+
+    public static String getMd5(File file) {
+        InputStream inputStream = null;
+        byte[] buffer = new byte[2048];
+        int numRead;
+        MessageDigest md5;
+        try {
+            inputStream = new FileInputStream(file);
+            md5 = MessageDigest.getInstance(&quot;MD5&quot;);
+            while ((numRead = inputStream.read(buffer)) &gt; 0) {
+                md5.update(buffer, 0, numRead);
+            }
+            inputStream.close();
+            inputStream = null;
+            return md5ToString(md5.digest());
+        } catch (Exception e) {
+            return null;
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private static String md5ToString(byte[] md5Bytes) {
+        StringBuilder hexValue = new StringBuilder();
+        for (byte b : md5Bytes) {
+            int val = ((int) b) &amp; 0xff;
+            if (val &lt; 16) {
+                hexValue.append(&quot;0&quot;);
+            }
+            hexValue.append(Integer.toHexString(val));
+        }
+        return hexValue.toString();
+    }
+
+}`
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+		
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/13_Matlab_Simulink/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2465,501 +3484,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/5_View分析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JunBoXu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LgStars">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/17/5_View分析/" itemprop="url">View的分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T15:47:00+08:00">
-                2018-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/17/5_View分析/" class="leancloud_visitors" data-flag-title="View的分析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>°C</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="界面的搭建"><a href="#界面的搭建" class="headerlink" title="界面的搭建"></a>界面的搭建</h2><blockquote>
-<p>面向对象语言中有一种说法叫做万物皆对象，就像Java语言中，所有的类都是Object的子类。</p>
-</blockquote>
-<blockquote>
-<p>在Android中，所能看到的全部控件都是View和它的子类展示的。</p>
-</blockquote>
-<h3 id="1-属性分析"><a href="#1-属性分析" class="headerlink" title="1 属性分析"></a>1 属性分析</h3><pre><code>（1）android：gravity - 表示控件里面的元素对齐方式。
-
-（2）padding和margin用法一样，只不过margin是元素外边距，padding是内边距（元素的内部）。
-
-（3）scaleType是缩放的方式，默认就是fitCenter，表示图片会填充控件，不会让图片变形，并且居中显示。
-
-（4）android：scaleType=&quot;centerCrop&quot;，以填满整个imageview为目的，等比例放大。
-
-（5）android：scaleType=&quot;fitXY&quot;，图片填充控件，但是允许图片拉伸。
-
-（6）android：scaleType=&quot;center&quot;，居中显示，超过剪切。
-
-（7）android：scaleType=&quot;matrix&quot;，不改变原图大小，从imageview左上角开始绘制原图。
-
-（8）android：scaleType=&quot;fitStart&quot;把原图按比例放大（缩小）到imageview的高度，显示在imageview的上部分位置。
-
-（9）android：scaleType=&quot;centerInside&quot;以原图完全显示为目的，将图片内容完整居中显示，通过按比例缩小原图的size宽（高）等于或者小于imageview的高（宽）。
-</code></pre><h3 id="2-布局介绍"><a href="#2-布局介绍" class="headerlink" title="2 布局介绍"></a>2 布局介绍</h3><blockquote>
-<p>Android的图形用户界面是由多个View和ViewGroup构建出来的。ViewGroup也是view的子类，是一个特殊的View。并且ViewGroup的不可见的。</p>
-</blockquote>
-<pre><code>（1）LinearLayout - 线性布局
-
-（2）RelativeLayout - 相对布局
-
-（3）FrameLayout - 帧布局
-
-（4）GridLayout - 网格布局
-
-（5）CoordinatorLayout - 材料设计引入的（处理各个子view之间的相互依赖关系）
-
-（6）ConstraintLayout - 约束布局
-
-（7）TableLayout - 表格布局（不常见）
-
-（8）AbsoluteLayout - 绝对布局（基本废弃）
-</code></pre><h3 id="3-零碎知识"><a href="#3-零碎知识" class="headerlink" title="3 零碎知识"></a>3 零碎知识</h3><blockquote>
-<p>没有系统归类</p>
-</blockquote>
-<p>3.1 修改Toast的位置</p>
-<pre><code>（1）方法一：setGravity(int gravity,int xOffset,int yOffset) - 3个参数分别是（起点位置，水平偏移量，垂直偏移量）。
-
-（2）方法二：setMargin(float horizontalMargin,float verticalMargin) - 以纵向和横向的百分比设置显示位置，参数均为float类型。
-</code></pre><p>3.2 自定义Toast布局</p>
-<blockquote>
-<p>private void showToast(){</p>
-<pre><code>Toast toast = new Toast(this);
-ImageView imageview  = new ImageView(this);
-imageview.setImageResource(R.mipmap.ic_launcher);
-LinearLayout linear = new LinearLayout(this);
-linear.setOrientation(LinearLayout.HORIZONTAL);
-linear.addView(imageview);
-toast.setView(linear);
-toast.setDuration(Toast.LENGTH_SHORT);
-toast.show();
-</code></pre><p>}</p>
-</blockquote>
-<p>3.3 内存泄漏</p>
-<blockquote>
-<p>Toast.makeText(MainActivity.this,”Hello”,Toast.LENGTH_SHORT).show();</p>
-</blockquote>
-<pre><code>（1）--该回收的内存由于各种原因没有被回收，还驻留在内存中。
-
-（2）原因：如果在Toast消失之前，Toast持有了当前的activity，而此时，用户点击了返回键，导致activity无法被GC销毁，这个activity就引起了内存泄漏。
-
-（3）解决：所有和当前无关的activity的Context都可以传进去。例如：Toast.makeText(getApplicationContext(),&quot;Hello&quot;,Toast.LENGTH_SHORT).show();
-</code></pre><p>3.4 Snackbar</p>
-<blockquote>
-<p>Toast缺点在于不能和用户互交，而Material Design包中的SnaCKBar完美解决了这个问题。<br>先添加包 - compile ‘com.android.support:design:26.0.0-alpha1’</p>
-</blockquote>
-<blockquote>
-<p>btn_show = (Button) findViewById(R.id.button);</p>
-<pre><code> btn_show.setOnClickListener(new View.OnClickListener() {
-    @Override
-     public void onClick(View view) {
-        Snackbar.make(view,&quot;消息已发出&quot;,Snackbar.LENGTH_SHORT).setAction&gt; &gt; (&quot;撤回&quot;, new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Toast.makeText(getApplicationContext(),&quot;已撤回&quot;,Toast.LENGTH_SHORT).show();
-             }
-         }).show();
-     }
-});
-</code></pre></blockquote>
-<p>3.5 使用Lambda表达式代替匿名内部类</p>
-<blockquote>
-<p>原先使用的代码式：</p>
-<p>btn_show = (Button) findViewById(R.id.button);</p>
-<pre><code>btn_show.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        showToast();
-    }
-});
-</code></pre></blockquote>
-<blockquote>
-<p>转换之后的代码式：</p>
-<p>btn_show.setOnClickListener(v -&gt; showToast());</p>
-</blockquote>
-<p>3.6 使用方式：在app/build.gradle脚本中添加如下代码:</p>
-<blockquote>
-<p>compileOptions {<br>       sourceCompatibility 1.8<br>       targetCompatibility 1.8<br>   }</p>
-</blockquote>
-<pre><code>注意：在android studio 2.2后需加入
-
-defaultConfig {
-    jackOptions{
-        //打开Jack编译器
-        enabled true
-    }
-</code></pre><p>3.7 如果代码需要混淆，需要在proguard-rules.pro文件中添加如下配置，否则混淆没有办法通过</p>
-<blockquote>
-<p>-dontwarn java.lang.invoke.<strong><br>-keep class java.lang.invoke.</strong>(*;);</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-		
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/4_测试文章密码功能/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JunBoXu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LgStars">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/17/4_测试文章密码功能/" itemprop="url">测试文章加密功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T12:30:00+08:00">
-                2018-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/功能/" itemprop="url" rel="index">
-                    <span itemprop="name">功能</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/17/4_测试文章密码功能/" class="leancloud_visitors" data-flag-title="测试文章加密功能">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>°C</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-		
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3014,7 +3538,7 @@ defaultConfig {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -3025,7 +3549,7 @@ defaultConfig {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
