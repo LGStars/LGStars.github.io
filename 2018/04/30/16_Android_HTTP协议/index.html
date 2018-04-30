@@ -92,17 +92,25 @@
 
 
 
-<meta name="description" content="界面的搭建 面向对象语言中有一种说法叫做万物皆对象，就像Java语言中，所有的类都是Object的子类。   在Android中，所能看到的全部控件都是View和它的子类展示的。  1 属性分析（1）android：gravity - 表示控件里面的元素对齐方式。  （2）padding和margin用法一样，只不过margin是元素外边距，padding是内边距（元素的内部）。  （3）scal">
+<meta name="description" content="HTTP简介HTTP 协议（HyperText Transfer Protocol，超文本传输协议）是用于从 WWW 服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。 计算机相互之间的通信 互联网的关键技术就是 TCP/IP 协议。两台计算机之间的通信是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="View的分析">
-<meta property="og:url" content="http://yoursite.com/2018/03/17/5_View分析/index.html">
+<meta property="og:title" content="HTTP协议">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/16_Android_HTTP协议/index.html">
 <meta property="og:site_name" content="LgStars">
-<meta property="og:description" content="界面的搭建 面向对象语言中有一种说法叫做万物皆对象，就像Java语言中，所有的类都是Object的子类。   在Android中，所能看到的全部控件都是View和它的子类展示的。  1 属性分析（1）android：gravity - 表示控件里面的元素对齐方式。  （2）padding和margin用法一样，只不过margin是元素外边距，padding是内边距（元素的内部）。  （3）scal">
+<meta property="og:description" content="HTTP简介HTTP 协议（HyperText Transfer Protocol，超文本传输协议）是用于从 WWW 服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。 计算机相互之间的通信 互联网的关键技术就是 TCP/IP 协议。两台计算机之间的通信是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-17T09:31:21.686Z">
+<meta property="og:image" content="https://i.imgur.com/NBdEoIG.png">
+<meta property="og:image" content="https://i.imgur.com/rtcvTwk.png">
+<meta property="og:image" content="https://i.imgur.com/BrYZ9hf.png">
+<meta property="og:image" content="https://i.imgur.com/K28R443.png">
+<meta property="og:image" content="https://i.imgur.com/tTTVGxz.png">
+<meta property="og:image" content="https://i.imgur.com/mO7rE9N.png">
+<meta property="og:image" content="https://i.imgur.com/Tg4sXc7.png">
+<meta property="og:updated_time" content="2018-04-30T06:03:20.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="View的分析">
-<meta name="twitter:description" content="界面的搭建 面向对象语言中有一种说法叫做万物皆对象，就像Java语言中，所有的类都是Object的子类。   在Android中，所能看到的全部控件都是View和它的子类展示的。  1 属性分析（1）android：gravity - 表示控件里面的元素对齐方式。  （2）padding和margin用法一样，只不过margin是元素外边距，padding是内边距（元素的内部）。  （3）scal">
+<meta name="twitter:title" content="HTTP协议">
+<meta name="twitter:description" content="HTTP简介HTTP 协议（HyperText Transfer Protocol，超文本传输协议）是用于从 WWW 服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。 计算机相互之间的通信 互联网的关键技术就是 TCP/IP 协议。两台计算机之间的通信是">
+<meta name="twitter:image" content="https://i.imgur.com/NBdEoIG.png">
 
 
 
@@ -132,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/17/5_View分析/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/30/16_Android_HTTP协议/"/>
 
 
 
 
 
-  <title>View的分析 | LgStars</title>
+  <title>HTTP协议 | LgStars</title>
   
 
 
@@ -276,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/5_View分析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/16_Android_HTTP协议/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JunBoXu">
@@ -293,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">View的分析</h1>
+          <h1 class="post-title" itemprop="name headline">HTTP协议</h1>
         
 
         <div class="post-meta">
@@ -305,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T15:47:00+08:00">
-                2018-03-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T13:29:00+08:00">
+                2018-04-30
               </time>
             
 
@@ -345,7 +353,7 @@
 
           
           
-             <span id="/2018/03/17/5_View分析/" class="leancloud_visitors" data-flag-title="View的分析">
+             <span id="/2018/04/30/16_Android_HTTP协议/" class="leancloud_visitors" data-flag-title="HTTP协议">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,126 +416,84 @@
       
 
       
-        <h2 id="界面的搭建"><a href="#界面的搭建" class="headerlink" title="界面的搭建"></a>界面的搭建</h2><blockquote>
-<p>面向对象语言中有一种说法叫做万物皆对象，就像Java语言中，所有的类都是Object的子类。</p>
+        <h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>HTTP 协议（HyperText Transfer Protocol，超文本传输协议）是用于从 WWW 服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。</p>
+<h3 id="计算机相互之间的通信"><a href="#计算机相互之间的通信" class="headerlink" title="计算机相互之间的通信"></a>计算机相互之间的通信</h3><blockquote>
+<p>互联网的关键技术就是 TCP/IP 协议。两台计算机之间的通信是通过<br>TCP/IP 协议在因特网上进行的。实际上这个是两个协议：</p>
 </blockquote>
+<pre><code>TCP : Transmission Control Protocol 传输控制协议
+
+IP： Internet Protocol 网际协议。
+</code></pre><p>TCP 负责应用软件（比如你的浏览器）和网络软件之间的通信。 IP 负责计算机之间的通信。</p>
+<pre><code>TCP 负责将数据分割并装入 IP 包， IP 负责将包发送至接受者，传输过程要经 IP 路由器负责根据通信量、网络中的错误或者其他参数来进行正确地寻址，然后在它们到达的时候重新
+组合它们。
+</code></pre><h3 id="HTTP协议所在的协议层"><a href="#HTTP协议所在的协议层" class="headerlink" title="HTTP协议所在的协议层"></a>HTTP协议所在的协议层</h3><p><img src="https://i.imgur.com/NBdEoIG.png" alt=""></p>
+<h3 id="HTTP请求响应模型"><a href="#HTTP请求响应模型" class="headerlink" title="HTTP请求响应模型"></a>HTTP请求响应模型</h3><blockquote>
+<p>HTTP 由请求和响应构成，是一个标准的客户端服务器模型（B/S）。<br>HTTP 协议永远都是客户端发起请求，服务器回送响应</p>
+</blockquote>
+<p><img src="https://i.imgur.com/rtcvTwk.png" alt=""></p>
 <blockquote>
-<p>在Android中，所能看到的全部控件都是View和它的子类展示的。</p>
+<p>HTTP 是一个无状态的协议。无状态是指客户机（Web 浏览器）和服务器&gt; 之间不需要建立持久的连接</p>
 </blockquote>
-<h3 id="1-属性分析"><a href="#1-属性分析" class="headerlink" title="1 属性分析"></a>1 属性分析</h3><pre><code>（1）android：gravity - 表示控件里面的元素对齐方式。
+<h3 id="HTTP工作过程"><a href="#HTTP工作过程" class="headerlink" title="HTTP工作过程"></a>HTTP工作过程</h3><pre><code>1 ) 地址解析
+2）封装 HTTP 请求数据包
+3）封装成 TCP 包，建立 TCP 连接（TCP 的三次握手）
+4）客户机发送请求命令
+5）服务器响应
+6）服务器关闭 TCP 连接
 
-（2）padding和margin用法一样，只不过margin是元素外边距，padding是内边距（元素的内部）。
-
-（3）scaleType是缩放的方式，默认就是fitCenter，表示图片会填充控件，不会让图片变形，并且居中显示。
-
-（4）android：scaleType=&quot;centerCrop&quot;，以填满整个imageview为目的，等比例放大。
-
-（5）android：scaleType=&quot;fitXY&quot;，图片填充控件，但是允许图片拉伸。
-
-（6）android：scaleType=&quot;center&quot;，居中显示，超过剪切。
-
-（7）android：scaleType=&quot;matrix&quot;，不改变原图大小，从imageview左上角开始绘制原图。
-
-（8）android：scaleType=&quot;fitStart&quot;把原图按比例放大（缩小）到imageview的高度，显示在imageview的上部分位置。
-
-（9）android：scaleType=&quot;centerInside&quot;以原图完全显示为目的，将图片内容完整居中显示，通过按比例缩小原图的size宽（高）等于或者小于imageview的高（宽）。
-</code></pre><h3 id="2-布局介绍"><a href="#2-布局介绍" class="headerlink" title="2 布局介绍"></a>2 布局介绍</h3><blockquote>
-<p>Android的图形用户界面是由多个View和ViewGroup构建出来的。ViewGroup也是view的子类，是一个特殊的View。并且ViewGroup的不可见的。</p>
+注：一般情况下，一旦 Web 服务器向浏览器发送了请求数据，它就要关闭 TCP 连接，然后如果浏览器或者服务器在其头信息加入了这行代码
+    Connection:keep-alive
+TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。
+</code></pre><h3 id="HTTP1-0和HTTP1-1的区别"><a href="#HTTP1-0和HTTP1-1的区别" class="headerlink" title="HTTP1.0和HTTP1.1的区别"></a>HTTP1.0和HTTP1.1的区别</h3><blockquote>
+<p>在 HTTP1.0 版本中，浏览器请求一个带有图片的网页，会由于下载图片&gt; 而与服务器之间开启一个新的连接；但在 HTTP1.1 版本中，允许浏览器&gt; 在拿到当前请求对应的全部资源后再断开连接，提高了效率。</p>
 </blockquote>
-<pre><code>（1）LinearLayout - 线性布局
-
-（2）RelativeLayout - 相对布局
-
-（3）FrameLayout - 帧布局
-
-（4）GridLayout - 网格布局
-
-（5）CoordinatorLayout - 材料设计引入的（处理各个子view之间的相互依赖关系）
-
-（6）ConstraintLayout - 约束布局
-
-（7）TableLayout - 表格布局（不常见）
-
-（8）AbsoluteLayout - 绝对布局（基本废弃）
-</code></pre><h3 id="3-零碎知识"><a href="#3-零碎知识" class="headerlink" title="3 零碎知识"></a>3 零碎知识</h3><blockquote>
-<p>没有系统归类</p>
+<p><img src="https://i.imgur.com/BrYZ9hf.png" alt=""></p>
+<h3 id="HTTP请求方式"><a href="#HTTP请求方式" class="headerlink" title="HTTP请求方式"></a>HTTP请求方式</h3><p>HTTP1.1 支持 7 种请求方法： GET、 POST、 HEAD、 OPTIONS、 PUT、 DELETE 和 TARCE</p>
+<p><img src="https://i.imgur.com/K28R443.png" alt=""></p>
+<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><ul>
+<li><p>GET 方法是默认的 HTTP 请求方法，输入网址的方式去访问网页的时候，浏览器采用的就是 GET 方法向服务器获取资源。</p>
+</li>
+<li><p>我们可以使用 GET 方法来提交表单数据，用 GET 方法提交的表单数据只经过了简单的编码，同时它将作为 URL 的一部分向服务器发送，因此，如果使用 GET 方法来提交表单数据就存在着安全隐患上。例如：</p>
+<p>  Http://localhost/login.php?username=aa&amp;password=1234</p>
+</li>
+<li><p>从上面的 URL 请求中，很容易就可以辩认出表单提交的内容。（？之后的内容）</p>
+</li>
+<li><p>由于 GET 方法提交的数据是作为 URL 请求的一部分所以提交的数据量不能太大。这是因为浏览器对 url 的长度有限制各种浏览器也会对 url 的长度有所限制</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/tTTVGxz.png" alt=""></p>
+<h3 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h3><blockquote>
+<p>下面这是我要填写的一个表，我要把数据传给服务器用的就是 post</p>
 </blockquote>
-<p>3.1 修改Toast的位置</p>
-<pre><code>（1）方法一：setGravity(int gravity,int xOffset,int yOffset) - 3个参数分别是（起点位置，水平偏移量，垂直偏移量）。
-
-（2）方法二：setMargin(float horizontalMargin,float verticalMargin) - 以纵向和横向的百分比设置显示位置，参数均为float类型。
-</code></pre><p>3.2 自定义Toast布局</p>
-<blockquote>
-<p>private void showToast(){</p>
-<pre><code>Toast toast = new Toast(this);
-ImageView imageview  = new ImageView(this);
-imageview.setImageResource(R.mipmap.ic_launcher);
-LinearLayout linear = new LinearLayout(this);
-linear.setOrientation(LinearLayout.HORIZONTAL);
-linear.addView(imageview);
-toast.setView(linear);
-toast.setDuration(Toast.LENGTH_SHORT);
-toast.show();
-</code></pre><p>}</p>
-</blockquote>
-<p>3.3 内存泄漏</p>
-<blockquote>
-<p>Toast.makeText(MainActivity.this,”Hello”,Toast.LENGTH_SHORT).show();</p>
-</blockquote>
-<pre><code>（1）--该回收的内存由于各种原因没有被回收，还驻留在内存中。
-
-（2）原因：如果在Toast消失之前，Toast持有了当前的activity，而此时，用户点击了返回键，导致activity无法被GC销毁，这个activity就引起了内存泄漏。
-
-（3）解决：所有和当前无关的activity的Context都可以传进去。例如：Toast.makeText(getApplicationContext(),&quot;Hello&quot;,Toast.LENGTH_SHORT).show();
-</code></pre><p>3.4 Snackbar</p>
-<blockquote>
-<p>Toast缺点在于不能和用户互交，而Material Design包中的SnaCKBar完美解决了这个问题。<br>先添加包 - compile ‘com.android.support:design:26.0.0-alpha1’</p>
-</blockquote>
-<blockquote>
-<p>btn_show = (Button) findViewById(R.id.button);</p>
-<pre><code> btn_show.setOnClickListener(new View.OnClickListener() {
-    @Override
-     public void onClick(View view) {
-        Snackbar.make(view,&quot;消息已发出&quot;,Snackbar.LENGTH_SHORT).setAction&gt; &gt; (&quot;撤回&quot;, new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Toast.makeText(getApplicationContext(),&quot;已撤回&quot;,Toast.LENGTH_SHORT).show();
-             }
-         }).show();
-     }
-});
-</code></pre></blockquote>
-<p>3.5 使用Lambda表达式代替匿名内部类</p>
-<blockquote>
-<p>原先使用的代码式：</p>
-<p>btn_show = (Button) findViewById(R.id.button);</p>
-<pre><code>btn_show.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        showToast();
-    }
-});
-</code></pre></blockquote>
-<blockquote>
-<p>转换之后的代码式：</p>
-<p>btn_show.setOnClickListener(v -&gt; showToast());</p>
-</blockquote>
-<p>3.6 使用方式：在app/build.gradle脚本中添加如下代码:</p>
-<blockquote>
-<p>compileOptions {<br>       sourceCompatibility 1.8<br>       targetCompatibility 1.8<br>   }</p>
-</blockquote>
-<pre><code>注意：在android studio 2.2后需加入
-
-defaultConfig {
-    jackOptions{
-        //打开Jack编译器
-        enabled true
-    }
-</code></pre><p>3.7 如果代码需要混淆，需要在proguard-rules.pro文件中添加如下配置，否则混淆没有办法通过</p>
-<blockquote>
-<p>-dontwarn java.lang.invoke.<strong><br>-keep class java.lang.invoke.</strong>(*;);</p>
-</blockquote>
-
+<p><img src="https://i.imgur.com/mO7rE9N.png" alt=""></p>
+<p>当我们点击保存的时候</p>
+<p><img src="https://i.imgur.com/Tg4sXc7.png" alt=""></p>
+<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>1、Host : 服务器地址</p>
+<p>2、User-Agent — 用户代理 它是一个特殊字符串头，包含了浏览器类型以及版 本以及操作系统，浏览器内核，等信息的标识，通过这些信息可以提供更好的体验或者进行信息统计</p>
+<p>3、Accept — 接收的类型<br>    audio/<em> 接受所有的声音文件。<br>    video/</em> 接受所有的视频文件。<br>    image/* 接受所有的图像文件。<br>    IME_type一个有效的 MIME 类型，不带参数。请参阅 IANAMIME 类型，获得标准 MIME 类型的完整列表。</p>
+<p>4、Accept-Language — 用于告诉服务器浏览器可以支持什么语言。 如果网站支持多语种的话，可以使用这个信息来决定返回什么语言的网页</p>
+<p>5、Accept - Encoding : 是浏览器发给服务器,声明浏览器支持的编码类型常见的有 compress, gzip //支持 compress 和 gzip 类型(压缩)</p>
+<p>6、Cookie : 主要用来保存账号和密码</p>
+<p>7、Connection : 表示是否需要持久连接</p>
+<p>8、Content-Type：告诉浏览器自己响应的对象的类型和字符集, text/html; charset=utf-8 / ContentType: image/jpeg</p>
+<h3 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h3><p>1、Cache-Control 告诉所有的缓存机制是否可以缓存及哪种类型Cache-Control: nocache</p>
+<p>2、Content-Type — content-type 是必须的 multipart/form-data 是设置表单的 MIME 编码。默认情况，这个编码格式是application/x-www-form-urlencoded，不能用于文件上传；只有使用了multipart/form-data，才能完整的传递文件数据.</p>
+<p>3、Content-Length — 这里的 3693 是要上传文件的总长度</p>
+<p>4、Date - 原始服务器消息发出的时间 Date: Tue, 15 Nov 2010 08:12:31 GMT</p>
+<p>5、Expires 响应过期的日期和时间 Expires: Thu, 01 Dec 2010 16:00:00 GMT</p>
+<p>6、Server web 服务器软件名称</p>
+<p>7、Transfer-Encoding 文件传输编码 Transfer-Encoding:chunked</p>
+<p>8、Vary 告诉下游代理是使用缓存响应还是从原始服务器请求</p>
+<p>9、Accept-Ranges 表明服务器是否支持指定范围请求及哪种类型的分段请求 bytes(断点下载的时候用得到)</p>
+<h3 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h3><p>1、200 成功 服务器已成功处理了请求。通常，这表示服务器提供了请求的网页</p>
+<p>2、302 重定向 代表让浏览器重新请求另一个资源</p>
+<p>3、404 找不到 找不到请求的资源，但有时请求路径正确也返回 404 往往是由于 Web 应用有配置方面的问题， 例如按照配置文件中指定的组件的全类名找不到指定的类。</p>
+<p>4、500 错误 服务器内部错误，例如服务器端程序运行时抛出异常。</p>
+<pre><code>●响应状态码以 2 开头的通常表示成功。
+●响应状态码以 3 开头的通常表示转移。
+●响应状态码以 4 开头的通常表示无法访问，其中包括找不到资源或没有权限等。
+●响应状态码以 5 开头的通常表示服务器端程序运行出错。
+</code></pre>
       
     </div>
     
@@ -561,8 +527,8 @@ defaultConfig {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/17/4_测试文章密码功能/" rel="next" title="测试文章加密功能">
-                <i class="fa fa-chevron-left"></i> 测试文章加密功能
+              <a href="/2018/04/05/15_Protues_光电耦合/" rel="next" title="实现线性传输的非线性光电耦合电路的设计与仿真">
+                <i class="fa fa-chevron-left"></i> 实现线性传输的非线性光电耦合电路的设计与仿真
               </a>
             
           </div>
@@ -570,10 +536,6 @@ defaultConfig {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/18/6_国考二级---指针篇/" rel="prev" title="指针">
-                指针 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -716,7 +678,7 @@ defaultConfig {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#界面的搭建"><span class="nav-number">1.</span> <span class="nav-text">界面的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-属性分析"><span class="nav-number">1.1.</span> <span class="nav-text">1 属性分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-布局介绍"><span class="nav-number">1.2.</span> <span class="nav-text">2 布局介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-零碎知识"><span class="nav-number">1.3.</span> <span class="nav-text">3 零碎知识</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP简介"><span class="nav-number">1.</span> <span class="nav-text">HTTP简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机相互之间的通信"><span class="nav-number">1.1.</span> <span class="nav-text">计算机相互之间的通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议所在的协议层"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP协议所在的协议层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求响应模型"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP请求响应模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP工作过程"><span class="nav-number">1.4.</span> <span class="nav-text">HTTP工作过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP1-0和HTTP1-1的区别"><span class="nav-number">1.5.</span> <span class="nav-text">HTTP1.0和HTTP1.1的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求方式"><span class="nav-number">1.6.</span> <span class="nav-text">HTTP请求方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get请求"><span class="nav-number">1.7.</span> <span class="nav-text">get请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST请求"><span class="nav-number">1.8.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求头"><span class="nav-number">1.9.</span> <span class="nav-text">请求头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应头"><span class="nav-number">1.10.</span> <span class="nav-text">响应头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应状态码"><span class="nav-number">1.11.</span> <span class="nav-text">响应状态码</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -276,6 +276,271 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/16_Android_HTTP协议/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JunBoXu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LgStars">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/30/16_Android_HTTP协议/" itemprop="url">HTTP协议</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T13:29:00+08:00">
+                2018-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/30/16_Android_HTTP协议/" class="leancloud_visitors" data-flag-title="HTTP协议">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>HTTP 协议（HyperText Transfer Protocol，超文本传输协议）是用于从 WWW 服务器传输超文本到本地浏览器的传送协议。它可以使浏览器更加高效，使网络传输减少。它不仅保证计算机正确快速地传输超文本文档，还确定传输文档中的哪一部分，以及哪部分内容首先显示(如文本先于图形)等。</p>
+<h3 id="计算机相互之间的通信"><a href="#计算机相互之间的通信" class="headerlink" title="计算机相互之间的通信"></a>计算机相互之间的通信</h3><blockquote>
+<p>互联网的关键技术就是 TCP/IP 协议。两台计算机之间的通信是通过<br>TCP/IP 协议在因特网上进行的。实际上这个是两个协议：</p>
+</blockquote>
+<pre><code>TCP : Transmission Control Protocol 传输控制协议
+
+IP： Internet Protocol 网际协议。
+</code></pre><p>TCP 负责应用软件（比如你的浏览器）和网络软件之间的通信。 IP 负责计算机之间的通信。</p>
+<pre><code>TCP 负责将数据分割并装入 IP 包， IP 负责将包发送至接受者，传输过程要经 IP 路由器负责根据通信量、网络中的错误或者其他参数来进行正确地寻址，然后在它们到达的时候重新
+组合它们。
+</code></pre><h3 id="HTTP协议所在的协议层"><a href="#HTTP协议所在的协议层" class="headerlink" title="HTTP协议所在的协议层"></a>HTTP协议所在的协议层</h3><p><img src="https://i.imgur.com/NBdEoIG.png" alt=""></p>
+<h3 id="HTTP请求响应模型"><a href="#HTTP请求响应模型" class="headerlink" title="HTTP请求响应模型"></a>HTTP请求响应模型</h3><blockquote>
+<p>HTTP 由请求和响应构成，是一个标准的客户端服务器模型（B/S）。<br>HTTP 协议永远都是客户端发起请求，服务器回送响应</p>
+</blockquote>
+<p><img src="https://i.imgur.com/rtcvTwk.png" alt=""></p>
+<blockquote>
+<p>HTTP 是一个无状态的协议。无状态是指客户机（Web 浏览器）和服务器&gt; 之间不需要建立持久的连接</p>
+</blockquote>
+<h3 id="HTTP工作过程"><a href="#HTTP工作过程" class="headerlink" title="HTTP工作过程"></a>HTTP工作过程</h3><pre><code>1 ) 地址解析
+2）封装 HTTP 请求数据包
+3）封装成 TCP 包，建立 TCP 连接（TCP 的三次握手）
+4）客户机发送请求命令
+5）服务器响应
+6）服务器关闭 TCP 连接
+
+注：一般情况下，一旦 Web 服务器向浏览器发送了请求数据，它就要关闭 TCP 连接，然后如果浏览器或者服务器在其头信息加入了这行代码
+    Connection:keep-alive
+TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。
+</code></pre><h3 id="HTTP1-0和HTTP1-1的区别"><a href="#HTTP1-0和HTTP1-1的区别" class="headerlink" title="HTTP1.0和HTTP1.1的区别"></a>HTTP1.0和HTTP1.1的区别</h3><blockquote>
+<p>在 HTTP1.0 版本中，浏览器请求一个带有图片的网页，会由于下载图片&gt; 而与服务器之间开启一个新的连接；但在 HTTP1.1 版本中，允许浏览器&gt; 在拿到当前请求对应的全部资源后再断开连接，提高了效率。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/BrYZ9hf.png" alt=""></p>
+<h3 id="HTTP请求方式"><a href="#HTTP请求方式" class="headerlink" title="HTTP请求方式"></a>HTTP请求方式</h3><p>HTTP1.1 支持 7 种请求方法： GET、 POST、 HEAD、 OPTIONS、 PUT、 DELETE 和 TARCE</p>
+<p><img src="https://i.imgur.com/K28R443.png" alt=""></p>
+<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><ul>
+<li><p>GET 方法是默认的 HTTP 请求方法，输入网址的方式去访问网页的时候，浏览器采用的就是 GET 方法向服务器获取资源。</p>
+</li>
+<li><p>我们可以使用 GET 方法来提交表单数据，用 GET 方法提交的表单数据只经过了简单的编码，同时它将作为 URL 的一部分向服务器发送，因此，如果使用 GET 方法来提交表单数据就存在着安全隐患上。例如：</p>
+<p>  Http://localhost/login.php?username=aa&amp;password=1234</p>
+</li>
+<li><p>从上面的 URL 请求中，很容易就可以辩认出表单提交的内容。（？之后的内容）</p>
+</li>
+<li><p>由于 GET 方法提交的数据是作为 URL 请求的一部分所以提交的数据量不能太大。这是因为浏览器对 url 的长度有限制各种浏览器也会对 url 的长度有所限制</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/tTTVGxz.png" alt=""></p>
+<h3 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h3><blockquote>
+<p>下面这是我要填写的一个表，我要把数据传给服务器用的就是 post</p>
+</blockquote>
+<p><img src="https://i.imgur.com/mO7rE9N.png" alt=""></p>
+<p>当我们点击保存的时候</p>
+<p><img src="https://i.imgur.com/Tg4sXc7.png" alt=""></p>
+<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><p>1、Host : 服务器地址</p>
+<p>2、User-Agent — 用户代理 它是一个特殊字符串头，包含了浏览器类型以及版 本以及操作系统，浏览器内核，等信息的标识，通过这些信息可以提供更好的体验或者进行信息统计</p>
+<p>3、Accept — 接收的类型<br>    audio/<em> 接受所有的声音文件。<br>    video/</em> 接受所有的视频文件。<br>    image/* 接受所有的图像文件。<br>    IME_type一个有效的 MIME 类型，不带参数。请参阅 IANAMIME 类型，获得标准 MIME 类型的完整列表。</p>
+<p>4、Accept-Language — 用于告诉服务器浏览器可以支持什么语言。 如果网站支持多语种的话，可以使用这个信息来决定返回什么语言的网页</p>
+<p>5、Accept - Encoding : 是浏览器发给服务器,声明浏览器支持的编码类型常见的有 compress, gzip //支持 compress 和 gzip 类型(压缩)</p>
+<p>6、Cookie : 主要用来保存账号和密码</p>
+<p>7、Connection : 表示是否需要持久连接</p>
+<p>8、Content-Type：告诉浏览器自己响应的对象的类型和字符集, text/html; charset=utf-8 / ContentType: image/jpeg</p>
+<h3 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h3><p>1、Cache-Control 告诉所有的缓存机制是否可以缓存及哪种类型Cache-Control: nocache</p>
+<p>2、Content-Type — content-type 是必须的 multipart/form-data 是设置表单的 MIME 编码。默认情况，这个编码格式是application/x-www-form-urlencoded，不能用于文件上传；只有使用了multipart/form-data，才能完整的传递文件数据.</p>
+<p>3、Content-Length — 这里的 3693 是要上传文件的总长度</p>
+<p>4、Date - 原始服务器消息发出的时间 Date: Tue, 15 Nov 2010 08:12:31 GMT</p>
+<p>5、Expires 响应过期的日期和时间 Expires: Thu, 01 Dec 2010 16:00:00 GMT</p>
+<p>6、Server web 服务器软件名称</p>
+<p>7、Transfer-Encoding 文件传输编码 Transfer-Encoding:chunked</p>
+<p>8、Vary 告诉下游代理是使用缓存响应还是从原始服务器请求</p>
+<p>9、Accept-Ranges 表明服务器是否支持指定范围请求及哪种类型的分段请求 bytes(断点下载的时候用得到)</p>
+<h3 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h3><p>1、200 成功 服务器已成功处理了请求。通常，这表示服务器提供了请求的网页</p>
+<p>2、302 重定向 代表让浏览器重新请求另一个资源</p>
+<p>3、404 找不到 找不到请求的资源，但有时请求路径正确也返回 404 往往是由于 Web 应用有配置方面的问题， 例如按照配置文件中指定的组件的全类名找不到指定的类。</p>
+<p>4、500 错误 服务器内部错误，例如服务器端程序运行时抛出异常。</p>
+<pre><code>●响应状态码以 2 开头的通常表示成功。
+●响应状态码以 3 开头的通常表示转移。
+●响应状态码以 4 开头的通常表示无法访问，其中包括找不到资源或没有权限等。
+●响应状态码以 5 开头的通常表示服务器端程序运行出错。
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+		
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/15_Protues_光电耦合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -420,24 +685,18 @@
 </code></pre><h3 id="2、电路设计"><a href="#2、电路设计" class="headerlink" title="2、电路设计"></a>2、电路设计</h3><h4 id="2-1-设计原理"><a href="#2-1-设计原理" class="headerlink" title="2.1 设计原理"></a>2.1 设计原理</h4><pre><code>2.1.1 线性光耦内部大多采用光敏二极管进行光耦合，因此，线性光耦(如SLC800等)大多都有两种工作模式。光敏三极管虽然是光伏效应器件，但在零偏时，光敏三极管并无信号电流输出。因此，利用光敏三极管进行光耦合的光耦器件仅具有光电导型工作模式。
 
 2.1.2 光敏三极管是一种相当于将基极、集电极光敏二极管的电流加以放大的普通晶体管放大器。其工作过程可分为光电转换和光电流放大两个环节，如右图（1）。当基极受光时，入射光子在基区及收集区被吸收而产生电子-空穴对，生成光生电压，由此产生的光生电流进入发射极，从而在集电极回路中得到了一个放大了β倍的信号电流，如右图（2）。
-
-![](https://i.imgur.com/ldlOhaG.png)
-
-2.1.3 由此可知，在同样光照、同样偏压条件下，光敏三极管的输出电流是光敏二极管的β倍，所以光敏三极管构成的光耦电流传输比是光敏二极管的β倍，电路中与光耦串联的同一阻值电阻的分压也是β倍。由此可通过利用光敏三极管进行光耦合的光耦器件设计一种线性输出范围较宽的线性光耦隔离电路。
+</code></pre><p><img src="https://i.imgur.com/ldlOhaG.png" alt="设计原理"></p>
+<pre><code>2.1.3 由此可知，在同样光照、同样偏压条件下，光敏三极管的输出电流是光敏二极管的β倍，所以光敏三极管构成的光耦电流传输比是光敏二极管的β倍，电路中与光耦串联的同一阻值电阻的分压也是β倍。由此可通过利用光敏三极管进行光耦合的光耦器件设计一种线性输出范围较宽的线性光耦隔离电路。
 </code></pre><h4 id="2-2-电路组成"><a href="#2-2-电路组成" class="headerlink" title="2.2 电路组成"></a>2.2 电路组成</h4><pre><code>2.2.1 设计电路由光电耦合部分、输入部分和输出部分组成，如图所示。
 双路光耦采用PC817，由两个发光二极管和两个光敏三极管构成。将两发光二极管串联使其通过相同的电流，进而使两光敏三极管受光相同。一光敏三极管构成伺服反馈回路，经运算放大器反馈到输入端，称为伺服光电管；另一光敏三极管构成输出回路，典型用法是后接运算放大器，称为传输光电管。伺服反馈有利于发光二极管输出线性化，主要是利用运算放大器的功能特性，微调发光二极管的传输电流作保证。
 
 2.2.2 电容C的选用是必要的，在电路的工作过程中它主要起反馈作用，若不加电容在输出端会出现三角波，使运放两输入端的电压不能保持一致，影响电路的精度。为增大电路的输入阻抗并减小输出阻抗，在电路的输出端将运放A2作为放大器使用，以提高电路的带负载能力。
+</code></pre><p><img src="https://i.imgur.com/adeIiES.png" alt="电路组成"> </p>
+<h3 id="3、附录"><a href="#3、附录" class="headerlink" title="3、附录"></a>3、附录</h3><pre><code>3.1 仿真图
+</code></pre><p><img src="https://i.imgur.com/Mht62Ez.png" alt="仿真图"></p>
+<pre><code>3.2 效果图
+</code></pre><p><img src="https://i.imgur.com/aBavLRH.png" alt="效果图"></p>
 
-![](https://i.imgur.com/adeIiES.png) 
-</code></pre><h3 id="3、附录"><a href="#3、附录" class="headerlink" title="3、附录"></a>3、附录</h3><pre><code>3.1 仿真图
-
-![](https://i.imgur.com/Mht62Ez.png)
-
-3.2 效果图
-
-![](https://i.imgur.com/aBavLRH.png)
-</code></pre>
           
         
       
@@ -1481,20 +1740,14 @@ public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
 
     3.4.4 Scope -- 示波器模块可以接受多个输入信号，每个端口的输入信号都将在一个坐标轴中显示。如果是向量或矩阵信号，则以不同的颜色表示每个元素信号；如果信号本身是离散的，则显示信号的阶梯图。
 </code></pre><h3 id="4、Simulink实例"><a href="#4、Simulink实例" class="headerlink" title="4、Simulink实例"></a>4、Simulink实例</h3><pre><code>4.1 建立simulink
-
-    ![](https://i.imgur.com/LSlsKix.png)
-
-4.2 打开simulink库，其中关于电子器件在Simscape/Power Systems/下
+</code></pre><p><img src="https://i.imgur.com/LSlsKix.png" alt=""></p>
+<pre><code>4.2 打开simulink库，其中关于电子器件在Simscape/Power Systems/下
 
 4.3 建立实例
-
-    ![](https://i.imgur.com/pumgrUG.png)
-
-4.4 仿真完成图
-
-    ![](https://i.imgur.com/PYpf3Z5.png)
-
-注：在完成图后，一定要加powergui块（上图右下角）。
+</code></pre><p><img src="https://i.imgur.com/pumgrUG.png" alt=""></p>
+<pre><code>4.4 仿真完成图
+</code></pre><p><img src="https://i.imgur.com/PYpf3Z5.png" alt=""></p>
+<pre><code>注：在完成图后，一定要加powergui块（上图右下角）。
 </code></pre>
           
         
@@ -1806,9 +2059,8 @@ public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
     （4）MyAdapter继承RecyclerView.Adapter，需要一个ViewHolder的泛型，强制必须建立一个ViewHolder，创建一个ViewHolder并继承RecyclerView.ViewHolder,ViewHolder构造方法需要传递View对象，View对象会和ViewHolder进行绑定。
 
 4.3 效果图
-
-    ![](https://i.imgur.com/tz1wKXn.png)
-</code></pre><h3 id="5、RecyclerView实用扩展"><a href="#5、RecyclerView实用扩展" class="headerlink" title="5、RecyclerView实用扩展"></a>5、RecyclerView实用扩展</h3><pre><code>5.1 横向布局
+</code></pre><p><img src="https://i.imgur.com/tz1wKXn.png" alt=""></p>
+<h3 id="5、RecyclerView实用扩展"><a href="#5、RecyclerView实用扩展" class="headerlink" title="5、RecyclerView实用扩展"></a>5、RecyclerView实用扩展</h3><pre><code>5.1 横向布局
 
     （1）如果想要一个横向的布局列表，只要设置LinearLayoutManager就行，注意，要声明LayoutManager的类型是LinearLayoutManager，而不是父类的LayoutManager:
 
@@ -1825,10 +2077,8 @@ public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
         `GridLayoutManager LayoutManager = new GridLayoutManager(this,3);`
 
     （2）效果图：
-
-    ![](https://i.imgur.com/q4kJo6P.png)
-
-5.3 瀑布流布局
+</code></pre><p><img src="https://i.imgur.com/q4kJo6P.png" alt=""></p>
+<pre><code>5.3 瀑布流布局
 
     （1）瀑布流使用 StaggeredGridLayoutManager：
 
@@ -1838,9 +2088,8 @@ public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
     （2）如果第二个参数传入StaggeredGridLayoutManager.VERTICAL，那么第一个参数代表有多少列，反之亦然；
 
     （3）效果图：
+</code></pre><p><img src="https://i.imgur.com/2ZI7hPx.png" alt=""></p>
 
-    ![](https://i.imgur.com/2ZI7hPx.png)
-</code></pre>
           
         
       
@@ -3202,288 +3451,6 @@ public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-C" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/18/6_国考二级---指针篇/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JunBoXu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LgStars">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/18/6_国考二级---指针篇/" itemprop="url">指针</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T17:17:03+08:00">
-                2018-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C编程/" itemprop="url" rel="index">
-                    <span itemprop="name">C编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/18/6_国考二级---指针篇/" class="leancloud_visitors" data-flag-title="指针">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>°C</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-关于地址和指针"><a href="#1-关于地址和指针" class="headerlink" title="1 关于地址和指针"></a>1 关于地址和指针</h3><blockquote>
-<h4 id="真考链接"><a href="#真考链接" class="headerlink" title="真考链接"></a>真考链接</h4></blockquote>
-<blockquote>
-<p>指针用于存放其他数据的地址</p>
-</blockquote>
-<blockquote>
-<p>当指针指向变量时，利用指针可以指向该变量</p>
-</blockquote>
-<blockquote>
-<p>当指针指向数组时，利用指针可以访问数组元素</p>
-</blockquote>
-<blockquote>
-<p>当指针指向数组函数时，此时指针变量中存放的是函数的入口地址，可以通过指针调用该函数</p>
-</blockquote>
-<blockquote>
-<p>当指针指向结构时，可以用指针引用结构变量的成员</p>
-</blockquote>
-<p>1.1 地址：相当于每个变量的房间号。</p>
-<p>1.2 内存大小：</p>
-<pre><code>（1）int 2个字节
-
-（2）char 1个字节
-
-（3）float 4个字节
-
-（4）double 8个字节
-</code></pre><p>1.3 指针：</p>
-<pre><code>（1）在C语言中对变量进行存取操作，实际上也就是直接对变量的地址存储单元进行操作，这种方式叫做“直接存取”。
-
-（2）间接存取：即将变量的地址存放在另一种类型的变量中，从而通过这种新的变量类型来得到变量的值。
-
-（3）通过地址能找到所需的变量单元，可以说：地址“指向”该变量单元。
-
-（4）在C语言中，将地址形象的称为“地址”，意思是通过它能找到以它为地址的的内存单元，这里包含一个方向指向的意思。
-
-（5）一个变量的地址称为变量的“指针”。一个专门用来存放另一个变量的地址的变量（即指针），则称它为“指针变量”。
-</code></pre><h3 id="2-变量的指针和指向变量的指针变量"><a href="#2-变量的指针和指向变量的指针变量" class="headerlink" title="2 变量的指针和指向变量的指针变量"></a>2 变量的指针和指向变量的指针变量</h3><p>2.1 指针变量的定义和引用</p>
-<pre><code>（1）类型名 *指针变量名，...；例如：int *p;
-
-（2）*（星号）只是一个类型说明符。
-</code></pre><p>2.2 指针变量的引用</p>
-<pre><code>（1）指针变量中只能存放地址（指针），将一个整型变量（或者任何其他非地址类型的数据）赋给一个指针变量是不被允许的。
-
-（2）int *p;
-    p = 300;(不合法的赋值)
-
-（3）给一个指针赋空值：q = NULL 或 q = &apos;\0&apos; 或 q = 0；
-</code></pre><p>2.3 指针变量作为函数参数</p>
-<blockquote>
-<p>如果想要通过函数调用从而得到n个想要改变的值，可以采用以下方法：</p>
-</blockquote>
-<pre><code>（1）在主函数里面设n个变量，分别用n个指针变量指向它们。
-
-（2）然后将各个指针变量作为实参，即将n个变量的地址传递给所调用函数的形参。
-
-（3）通过形参指针变量的改变，从而改变这n个变量的值。
-
-（4）主函数就可以使用这些改变了的值的变量。
-
-注意：形参指针变量的值不能使实参指针变量的值发生改变。
-</code></pre><h3 id="3-数组和指针"><a href="#3-数组和指针" class="headerlink" title="3 数组和指针"></a>3 数组和指针</h3><blockquote>
-<p>所谓的数组的指针是指数组的起始地址，数组元素的指针是各个数组元素的地址。</p>
-</blockquote>
-<p>3.1 移动指针</p>
-<pre><code>（1）移动指针是指当指针变量指向一串连续的存储单元时，对指针变量进行加减运算，或者通过赋值运算，是指针变量指向相邻的存储单元。
-</code></pre><p>3.2 指向数组元素的指针和通过指针引用数组的元素</p>
-<pre><code>（1）指向数组元素的指针：
-
-    int c[10] = {0};
-    int *p;
-    p = c;
-
-    则语句p = c;与语句p = &amp;c[0];是等价的。
-
-（2）通过指针引用数组元素：
-
-    如果指针变量p已经指向数组中的一个元素，则p+1指向同数组中的下一个元素（而不是将p的值简单加1），这里的加1是指增加一个长度单位（与数组基类型所占存储单元相同）。
-</code></pre><p>3.3 用函数名作为函数参数</p>
-<blockquote>
-<p>数组名可以用作函数的形参和实参。</p>
-</blockquote>
-<pre><code>(1)当数组名作为参数被传递时，如果行参数组各元素发生了变化，则原实参数各元素的值也发生变化。
-
-解析1：当数组名作为实参时，在调用函数时是把数组的首地址传递给形参，因此实参数组和形参数组共占一段内存单元。
-
-解析2：如果用数组元素作为实参的情况就与变量作为实参一样，是“值传递方式”，单向传递。
-
-（2）比较：
-
-实参类型        要求形参的类型            传递的信息        通过函数调用参数改变实参的值
-
-变量名            变量名                    变量的值        不可以
-
-数组名            数组名或指针变量        数组的起始地址        可以
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-		
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3538,7 +3505,7 @@ public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
